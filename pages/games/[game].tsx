@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Project, projects } from "../../data/projects";
+import { Game, games } from "../../data/projects";
 import { useSpring, animated } from "react-spring";
 import { config } from "../../config";
 import Image from "next/image";
 import Back from "../../components/back";
+import { NextPage } from "next";
 
-const Game = () => {
+const Game: NextPage = () => {
   const router = useRouter();
-  const [project, setProject] = useState<Project | null>(null);
+  const [project, setProject] = useState<Game | null>(null);
 
   // When router is ready
   useEffect(() => {
@@ -17,7 +18,7 @@ const Game = () => {
       if (!router.isReady) return;
       const { game } = router.query;
 
-      for (const item of projects) {
+      for (const item of games) {
         if (item.directory === game) {
           setProject(item);
           return;
@@ -40,7 +41,7 @@ const Game = () => {
           <div
             className="bg-cover"
             style={{
-              backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.png)`,
+              backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
             }}
           >
             {/* White background overlay */}
@@ -75,7 +76,7 @@ const Game = () => {
                   <div className="flex items-center justify-center px-2 md:basis-1/2">
                     <div className="w-full p-6">
                       <Image
-                        src={`${config.IMG_DIR}${project.directory}/title.png`}
+                        src={`${config.IMG_DIR}${project.directory}/title.jpg`}
                         alt={project.name}
                         width="200"
                         height="200"
@@ -116,7 +117,7 @@ const Game = () => {
                   return (
                     <div key={index}>
                       <Image
-                        src={`${config.IMG_DIR}${project.directory}/${index}.png`}
+                        src={`${config.IMG_DIR}${project.directory}/${index}.jpg`}
                         alt={index.toString()}
                         width="16"
                         height="9"

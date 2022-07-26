@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "../data/projects";
+import { Game } from "../data/projects";
 import { config } from "../config";
 
 interface CardProps {
-  project: Project;
+  project: Game;
 }
 
-const Card: React.FC<CardProps> = ({ project }) => {
+const GamePanel: React.FC<CardProps> = ({ project }) => {
   return (
     <Link href={`${config.LINK_DIR}${project.directory}`}>
       <a className="cursor-default">
         <div
           className="relative bg-cover"
           style={{
-            backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.png)`,
+            backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
           }}
         >
           <div className="mb-12 flex gap-8 bg-black bg-opacity-30 py-24 px-20 transition duration-300 hover:bg-opacity-60 md:py-16 md:px-20">
@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({ project }) => {
             <div className="items-right hidden grow basis-1/3 justify-end md:flex">
               <div className="w-full">
                 <Image
-                  src={`${config.IMG_DIR}${project.directory}/title.png`}
+                  src={`${config.IMG_DIR}${project.directory}/title.jpg`}
                   alt={project.name}
                   width="200"
                   height="200"
@@ -47,4 +47,4 @@ const Card: React.FC<CardProps> = ({ project }) => {
   );
 };
 
-export default Card;
+export default GamePanel;

@@ -23,7 +23,7 @@ const Nav = () => {
         <div>
           <Link href="/">
             <a>
-              <span className="text-gray-500">Game Developer</span>
+              <span className="text-gray-500">Game & Web Developer</span>
             </a>
           </Link>
         </div>

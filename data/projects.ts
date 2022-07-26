@@ -1,4 +1,4 @@
-export interface Project {
+export interface Game {
   name: string;
   tools: string;
   description: string;
@@ -9,7 +9,45 @@ export interface Project {
   directory: string;
 }
 
+export interface Project {
+  name: string;
+  description: string;
+  languages?: string[];
+  technologies?: string[];
+  link?: string;
+  source?: string;
+  features?: string[];
+}
+
 export const projects: Project[] = [
+  {
+    name: "Chirp",
+    description:
+      "Social media app with a React/Next.js front-end and a Node.js/Express back-end.",
+    technologies: [
+      "Next.js (React)",
+      "Node.js (Express)",
+      "MongoDB",
+      "TypeScript (JavaScript)",
+    ],
+    features: [
+      "Responsive design",
+      "Create, pin, delete, reply to, share and dislike posts",
+      "Browse latest posts on the homepage, navigate through your own feed of following users or through specific post reply chains",
+      "Pagination / infinite scroll",
+      "Upload and post images as profile photos or as attachments to posts.",
+    ],
+  },
+  { name: "Blog CMS", description: "blog crm with backend, cms, and client" },
+  { name: "Timer", description: "Customisable pomodoro timer" },
+  {
+    name: "Frontend sites",
+    description:
+      "Multiple front-end sites created for businesses and non-profits with a variety of tools and frameworks.",
+  },
+];
+
+export const games: Game[] = [
   {
     directory: "distance",
     name: "Distance",

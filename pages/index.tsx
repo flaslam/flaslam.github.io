@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Card from "../components/card";
-import { projects } from "../data/projects";
+import GamePanel from "../components/gamePanel";
+import { games } from "../data/projects";
 import { useSpring, animated } from "react-spring";
 
 const Home: NextPage = () => {
@@ -12,8 +12,8 @@ const Home: NextPage = () => {
   return (
     <animated.div style={props}>
       <div className="container mx-auto px-12">
-        {projects.map((project, index) => (
-          <Card key={index} project={project} />
+        {games.map((project, index) => (
+          <GamePanel key={index} project={project} />
         ))}
       </div>
     </animated.div>
