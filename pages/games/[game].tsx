@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Game, games } from "../../data/projects";
+import { Game, games } from "../../types/games";
 import { useSpring, animated } from "react-spring";
 import { config } from "../../config";
 import Image from "next/image";
@@ -11,7 +11,7 @@ const Game: NextPage = () => {
   const router = useRouter();
   const [project, setProject] = useState<Game | null>(null);
 
-  // When router is ready
+  // When router.isReady changes
   useEffect(() => {
     // Find which project we are on.
     const findProject = () => {
@@ -35,7 +35,12 @@ const Game: NextPage = () => {
   return (
     <div>
       {/* Loading page until 404 displays */}
-      {!project ? null : (
+      {!project ? (
+        <div className="container mx-auto flex flex-col items-center">
+          No such game exists.
+          <Back>Go back</Back>
+        </div>
+      ) : (
         <animated.div style={props}>
           {/* Background image */}
           <div
@@ -45,10 +50,12 @@ const Game: NextPage = () => {
             }}
           >
             {/* White background overlay */}
-            <div className="bg-white bg-opacity-70 py-12 px-12">
+            <div className="bg-white bg-opacity-80 py-12 px-12">
               {/* Main content */}
               <div className="container mx-auto max-w-screen-lg">
-                <Back>Back to projects</Back>
+                <div className="mb-4 lg:mb-0">
+                  <Back>Back to projects</Back>
+                </div>
                 <div className="flex flex-col gap-6 md:flex-row md:gap-4">
                   <div className="flex items-center md:basis-1/2">
                     {/* Left side content */}
@@ -127,6 +134,8 @@ const Game: NextPage = () => {
                     </div>
                   );
                 })}
+
+            <Back>Back to projects</Back>
           </div>
         </animated.div>
       )}

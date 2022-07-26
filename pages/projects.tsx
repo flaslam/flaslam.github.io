@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { projects } from "../data/projects";
+import { projects } from "../types/projects";
 import { useSpring, animated } from "react-spring";
-import ProjectCard from "../components/projectCard";
+import ProjectCard from "../components/project-card";
 
 const Projects: NextPage = () => {
   const props = useSpring({
@@ -14,9 +14,7 @@ const Projects: NextPage = () => {
       <div className="container mx-auto px-12">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {projects.map((project, index) => (
-            <div key={index} className="rounded-md bg-violet-200 p-6">
-              <ProjectCard project={project} />
-            </div>
+            <ProjectCard project={project} key={index} />
           ))}
         </div>
       </div>
