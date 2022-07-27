@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 height="9"
                 layout="responsive"
                 objectFit="cover"
-                className="rounded-lg hover:opacity-80"
+                className="rounded-lg transition hover:scale-105 hover:opacity-80"
                 objectPosition="top"
               />
             </a>

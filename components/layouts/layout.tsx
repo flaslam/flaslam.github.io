@@ -5,11 +5,11 @@ import Footer from "../footer";
 
 interface Props {
   children: any;
-  title?: string;
+  title?: string | null;
 }
 
 const Layout: NextPage<Props> = ({ children, title }) => {
-  const pageTitle = title ? `${title} | Fahd Aslam` : "Fahd Aslam";
+  const pageTitle = title ? `Fahd Aslam | ${title}` : "Fahd Aslam";
 
   return (
     <>

@@ -63,7 +63,7 @@ export const projects: Project[] = [
   {
     name: "Portfolio site",
     description:
-      "The site you're on right now built to show my games and projects",
+      "Portfolio frontend built in Next.js and TypeScript to display my work and projects.",
     technologies: [
       "Next.js (React)",
       "TypeScript (JavaScript)",
