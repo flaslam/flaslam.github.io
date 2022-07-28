@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Game, games } from "../../types/games";
 import { config } from "../../config";
@@ -8,20 +7,19 @@ import { NextPage } from "next";
 import Layout from "../../components/layouts/layout";
 import { motion } from "framer-motion";
 
-const Game: NextPage = () => {
-  const router = useRouter();
+interface GameProps {
+  game: string;
+}
+
+const Game: NextPage<GameProps> = (props) => {
   const [project, setProject] = useState<Game | null>(null);
 
-  // When router.isReady changes
+  // On component mount
   useEffect(() => {
     // Find which project we are on
     const findProject = () => {
-      if (!router.isReady) return;
-
-      const { game } = router.query;
-
       for (const item of games) {
-        if (item.directory === game) {
+        if (item.directory === props.game) {
           setProject(item);
           return;
         }
@@ -30,7 +28,7 @@ const Game: NextPage = () => {
 
     findProject();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady]);
+  }, []);
 
   return (
     <Layout title={project ? project.name : null}>
@@ -146,6 +144,23 @@ const Game: NextPage = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticPaths = async () => {
+  const paths = games.map((game: Game) => ({
+    params: { game: game.directory },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context: any) => {
+  return {
+    props: context.params,
+  };
 };
 
 export default Game;
