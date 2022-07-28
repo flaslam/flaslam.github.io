@@ -23,6 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </a>
             </Link>
           )}
+
+          {/* Icons */}
           {!project.link ? null : (
             <Link href={project.link}>
               <a
@@ -37,7 +39,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Image */}
         {!project.image ? null : (
-          <Link href={project.link ? project.link : "/"}>
+          <Link
+            href={
+              project.source ? project.source : project.link ? project.link : ""
+            }
+          >
             <a target="_blank">
               <Image
                 src={project.image}
@@ -58,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Technologies */}
         {!project.technologies ? null : (
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-slate-600">
             {project.technologies.length <= 1
               ? project.technologies[0]
               : project.technologies.map((item, index) => (

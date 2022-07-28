@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
-import GamePanel from "../../components/game-panel";
-import { games } from "../../types/games";
-import { useSpring, animated } from "react-spring";
 import Layout from "../../components/layouts/layout";
+import GamesLayout from "../../components/games-layout";
+import { games } from "../../types/games";
 import { motion } from "framer-motion";
 
 const Games: NextPage = () => {
@@ -13,9 +12,7 @@ const Games: NextPage = () => {
         animate={{ opacity: 1, marginTop: -0 }}
       >
         <div className="container mx-auto px-12">
-          {games.map((game, index) => (
-            <GamePanel key={index} game={game} />
-          ))}
+          <GamesLayout games={games} />
         </div>
       </motion.div>
     </Layout>

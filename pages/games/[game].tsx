@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Game, games } from "../../types/games";
-import { useSpring, animated } from "react-spring";
 import { config } from "../../config";
 import Image from "next/image";
 import Back from "../../components/back";

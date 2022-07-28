@@ -1,30 +1,28 @@
-import {
-  Box,
-  OrbitControls,
-  Plane,
-  RoundedBox,
-  Sphere,
-} from "@react-three/drei";
+import { OrbitControls, OrthographicCamera, Sparkles } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+
+import Model from "./EvaEdit";
+// import Model from "./EvaShinji";
 
 const Visual = () => {
   return (
-    <div>
+    <div className="h-96 w-full">
       <Canvas>
+        <OrthographicCamera makeDefault position={[10, 5, 3]} zoom={27} />
         <OrbitControls
           autoRotate={true}
-          autoRotateSpeed={25}
+          autoRotateSpeed={3}
           enablePan={false}
-          enableRotate={false}
           enableZoom={false}
+          // enableRotate={false}
+          // maxZoom={70}
+          // minZoom={27}
         />
-        <mesh>
-          <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-          <meshToonMaterial attach="material" />
-        </mesh>
-        {/* <Box>
-          <meshToonMaterial attach="material" />
-        </Box> */}
+        <Model position={[0, -1.5, 0]} />
+
+        <ambientLight intensity={1} color={"#b0a1ff"} />
+        <pointLight position={[0, 20, 10]} intensity={1} />
+        {/* <Sparkles scale={10} size={2} color={"#6dbcb9"} /> */}
       </Canvas>
     </div>
   );
