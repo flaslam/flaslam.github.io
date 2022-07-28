@@ -6,6 +6,7 @@ import Back from "../../components/back";
 import { NextPage } from "next";
 import Layout from "../../components/layouts/layout";
 import { motion } from "framer-motion";
+import { PuffLoader } from "react-spinners";
 
 interface GameProps {
   game: string;
@@ -33,11 +34,10 @@ const Game: NextPage<GameProps> = (props) => {
   return (
     <Layout title={project ? project.name : null}>
       <div>
-        {/* Loading page until 404 displays */}
+        {/* Loading until page displays */}
         {!project ? (
           <div className="container mx-auto flex flex-col items-center">
-            No such game exists.
-            <Back>Go back</Back>
+            <PuffLoader />
           </div>
         ) : (
           <motion.div
