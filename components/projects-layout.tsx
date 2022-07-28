@@ -14,7 +14,7 @@ const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ projects }) => {
           initial={{ opacity: 0, marginTop: -75 }}
           animate={{ opacity: 1, marginTop: -0 }}
           key={index}
-          transition={{ delay: index * 0.15 }}
+          transition={{ delay: index * 0.125 }}
         >
           <ProjectCard project={project} key={index} />
         </motion.div>

@@ -56,7 +56,7 @@ const Game: NextPage<GameProps> = (props) => {
                 {/* Main content */}
                 <div className="container mx-auto max-w-screen-lg">
                   <div className="mb-4 lg:mb-0">
-                    <Back>Back to projects</Back>
+                    <Back>Back to games</Back>
                   </div>
                   <div className="flex flex-col gap-6 md:flex-row md:gap-4">
                     <div className="flex items-center md:basis-1/2">
