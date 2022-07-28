@@ -11,12 +11,12 @@ const GamesLayout: React.FC<GamesProps> = ({ games }) => {
     <div className="flex flex-col gap-12">
       {games.map((game, index) => (
         <motion.div
-          initial={{ opacity: 0, marginTop: -75 }}
-          animate={{ opacity: 1, marginTop: -0 }}
-          key={index}
+          initial={{ opacity: 0, translateY: -75 }}
+          animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: index * 0.125 }}
+          key={index}
         >
-          <GamePanel key={index} game={game} />
+          <GamePanel game={game} />
         </motion.div>
       ))}
     </div>

@@ -41,8 +41,8 @@ const Game: NextPage<GameProps> = (props) => {
           </div>
         ) : (
           <motion.div
-            initial={{ opacity: 0, marginTop: -75 }}
-            animate={{ opacity: 1, marginTop: -0 }}
+            initial={{ opacity: 0, translateY: -75 }}
+            animate={{ opacity: 1, translateY: 0 }}
           >
             {/* Background image */}
             <div

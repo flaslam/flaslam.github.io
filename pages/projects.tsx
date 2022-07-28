@@ -8,8 +8,8 @@ const Projects: NextPage = () => {
   return (
     <Layout title="Projects">
       <motion.div
-        initial={{ opacity: 0, marginTop: -75 }}
-        animate={{ opacity: 1, marginTop: -0 }}
+        initial={{ opacity: 0, translateY: -75 }}
+        animate={{ opacity: 1, translateY: 0 }}
       >
         <div className="container mx-auto mb-12 px-12 pb-4">
           <ProjectsLayout projects={projects} />

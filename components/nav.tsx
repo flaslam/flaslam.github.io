@@ -74,8 +74,8 @@ const Nav = () => {
       </div>
       {!menuOpen ? null : (
         <motion.div
-          initial={{ opacity: 0, marginTop: -50 }}
-          animate={{ opacity: 1, marginTop: -0 }}
+          initial={{ opacity: 0, translateY: -50 }}
+          animate={{ opacity: 1, translateY: 0 }}
         >
           <div className="mx-10 pb-8 sm:hidden">{createLinks()}</div>
         </motion.div>

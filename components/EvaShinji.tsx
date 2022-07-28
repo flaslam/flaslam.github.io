@@ -37,4 +37,4 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/EvaEdit.gltf");
+useGLTF.preload("/models/EvaEdit.gltf");

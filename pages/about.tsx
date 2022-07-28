@@ -9,13 +9,13 @@ const About: NextPage = () => {
   return (
     <Layout title="About">
       <motion.div
-        initial={{ opacity: 0, marginTop: -75 }}
-        animate={{ opacity: 1, marginTop: -0 }}
+        initial={{ opacity: 0, translateY: -75 }}
+        animate={{ opacity: 1, translateY: 0 }}
         className="container mx-auto"
       >
+        <Visual />
         <div className="mx-12">
-          <div className="flex flex-col items-center gap-6 rounded-lg bg-indigo-100 px-12 py-12">
-            <Visual />
+          <div className="flex flex-col items-center gap-6 rounded-lg bg-indigo-100 px-6 py-12">
             <p>Game and full-stack web developer based in London, UK</p>
             <div className="flex flex-col items-center gap-2">
               <div>Recently working with:</div>

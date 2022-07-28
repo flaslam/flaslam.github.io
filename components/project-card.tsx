@@ -54,6 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 objectFit="cover"
                 className="rounded-lg transition hover:scale-105 hover:opacity-80"
                 objectPosition="top"
+                priority
               />
             </a>
           </Link>
@@ -68,13 +69,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.technologies.length <= 1
               ? project.technologies[0]
               : project.technologies.map((item, index) => (
-                  <>
+                  <div key={index} className="inline">
                     {item}
                     {project.technologies &&
                     index === project.technologies.length - 1 ? null : (
                       <>, </>
                     )}
-                  </>
+                  </div>
                 ))}
           </div>
         )}

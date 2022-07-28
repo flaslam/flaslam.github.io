@@ -14,7 +14,7 @@ const Visual = () => {
           autoRotateSpeed={3}
           enablePan={false}
           enableZoom={false}
-          // enableRotate={false}
+          enableRotate={false}
           // maxZoom={70}
           // minZoom={27}
         />
