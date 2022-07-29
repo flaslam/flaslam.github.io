@@ -11,7 +11,7 @@ const Projects: NextPage = () => {
         initial={{ opacity: 0, translateY: -75 }}
         animate={{ opacity: 1, translateY: 0 }}
       >
-        <div className="container mx-auto mb-12 px-12 pb-4">
+        <div className="container mx-auto mb-12 px-6 pb-8 sm:px-12">
           <ProjectsLayout projects={projects} />
         </div>
       </motion.div>

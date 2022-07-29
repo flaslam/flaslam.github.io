@@ -2,7 +2,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -23,6 +23,12 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
 
   const group = useRef<THREE.Group>(null);
   const { nodes } = useGLTF("/models/EvaEdit.gltf") as GLTFResult;
+
+  useFrame(() => {
+    if (group.current) {
+      group.current.rotation.y += 0.0075;
+    }
+  });
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, 0, 1.56]} rotation={[-Math.PI, 0, -Math.PI]}>

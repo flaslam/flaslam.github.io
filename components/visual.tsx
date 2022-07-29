@@ -8,8 +8,15 @@ const Visual = () => {
   return (
     <div className="h-96 w-full">
       <Canvas>
-        <OrthographicCamera makeDefault position={[10, 5, 3]} zoom={27} />
-        <OrbitControls
+        <OrthographicCamera
+          makeDefault
+          position={[0, 5, 11]}
+          zoom={27}
+          rotation={[31, 0, 0]}
+        />
+        {/* <OrthographicCamera makeDefault position={[10, 5, 3]} zoom={27} /> */}
+
+        {/* <OrbitControls
           autoRotate={true}
           autoRotateSpeed={3}
           enablePan={false}
@@ -17,7 +24,8 @@ const Visual = () => {
           enableRotate={false}
           // maxZoom={70}
           // minZoom={27}
-        />
+          enabled={false}
+        /> */}
         <Model position={[0, -1.5, 0]} />
 
         <ambientLight intensity={1} color={"#b0a1ff"} />

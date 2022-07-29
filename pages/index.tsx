@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* Web projects */}
-        <div className="container mx-auto mb-6 px-12 pb-4">
+        <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
             Recent web projects{" "}
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* Game projects */}
-        <div className="container mx-auto mb-6 px-12">
+        <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
             Recent game projects{" "}
