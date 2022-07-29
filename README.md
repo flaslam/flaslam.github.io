@@ -9,7 +9,7 @@ This site was built using the following technologies:
 - Three.js
 - Tailwind CSS
 
-This repo is set up with a GitHub Action to build and export a static site to the gh-pages branch. This runs automatically when new changes are pushed to the main branch.
+This repo is set up with a GitHub Action to build and export a static site to the gh-pages branch automatically when new changes are pushed to the main branch.
 
 ## Set-up
 
