@@ -28,6 +28,7 @@ const Game: NextPage<GameProps> = (props) => {
     };
 
     findProject();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -46,7 +47,7 @@ const Game: NextPage<GameProps> = (props) => {
           >
             {/* Background image */}
             <div
-              className="bg-cover"
+              className="bg-cover bg-center"
               style={{
                 backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
               }}
