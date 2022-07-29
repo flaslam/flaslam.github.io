@@ -8,7 +8,7 @@ import Visual from "../components/visual";
 const About: NextPage = () => {
   const technologies = [
     "C# (Unity)",
-    "JavasScript ES6",
+    "JavaScript ES6",
     "TypeScript",
     "React",
     "Next.js",
@@ -30,7 +30,7 @@ const About: NextPage = () => {
         <div className="mb-4">
           <Visual />
         </div>
-        <div className="mx-12">
+        <div className="mx-6">
           <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg bg-indigo-100 px-6 py-12">
             <p>
               Full-stack web developer and indie game developer based in London,

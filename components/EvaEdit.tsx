@@ -29,6 +29,7 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
       group.current.rotation.y += 0.0075;
     }
   });
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, 0, 1.56]} rotation={[-Math.PI, 0, -Math.PI]}>
