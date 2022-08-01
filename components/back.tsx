@@ -13,7 +13,7 @@ const Back: React.FC<BackProps> = ({ children }) => {
         className="flex shrink items-center gap-2 rounded-lg py-2 px-4 hover:bg-black hover:bg-opacity-10"
       >
         <HiArrowNarrowLeft />{" "}
-        <span className="text-sm uppercase">{children}</span>
+        <span className="text-sm font-medium">{children}</span>
       </button>
     </div>
   );

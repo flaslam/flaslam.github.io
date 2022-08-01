@@ -53,7 +53,7 @@ const Game: NextPage<GameProps> = (props) => {
               }}
             >
               {/* White background overlay */}
-              <div className="bg-white bg-opacity-80 py-12 px-12">
+              <div className="bg-white bg-opacity-80 py-12 px-6 md:px-12">
                 {/* Main content */}
                 <div className="container mx-auto max-w-screen-lg">
                   <div className="mb-4 lg:mb-0">
@@ -84,7 +84,7 @@ const Game: NextPage<GameProps> = (props) => {
                       </div>
                     </div>
                     <div className="flex items-center justify-center px-2 md:basis-1/2">
-                      <div className="w-full p-6">
+                      <div className="w-full md:p-6">
                         <Image
                           src={`${config.IMG_DIR}${project.directory}/title.jpg`}
                           alt={project.name}
@@ -100,7 +100,7 @@ const Game: NextPage<GameProps> = (props) => {
               </div>
             </div>
 
-            <div className="container mx-auto my-12 flex max-w-screen-lg flex-col gap-12 px-8">
+            <div className="container mx-auto my-12 flex max-w-screen-lg flex-col gap-12 px-4">
               {!project.videos
                 ? null
                 : [...Array(project.videos)].map((item, index) => {
@@ -111,6 +111,7 @@ const Game: NextPage<GameProps> = (props) => {
                           muted
                           loop
                           style={{ clipPath: "inset(1px 1px)" }}
+                          playsInline
                         >
                           <source
                             src={`${config.IMG_DIR}${project.directory}/${index}.mp4`}
@@ -138,7 +139,7 @@ const Game: NextPage<GameProps> = (props) => {
                     );
                   })}
 
-              <Back>Back to projects</Back>
+              <Back>Back to games</Back>
             </div>
           </motion.div>
         )}
