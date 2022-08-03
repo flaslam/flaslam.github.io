@@ -23,7 +23,7 @@ export const projects: Project[] = [
     ],
     link: "https://chirp-flaslam.vercel.app/",
     source: "https://github.com/flaslam/chirp",
-    image: "/images/projects/chirp.png",
+    image: "/images/projects/chirp.jpg",
   },
   {
     name: "Spotify 3D Visualiser",
