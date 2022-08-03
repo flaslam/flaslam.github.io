@@ -30,7 +30,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
               </div>
             </div>
             <div className="items-right hidden grow basis-1/3 items-center justify-end md:flex">
-              <div className="w-full rounded-lg">
+              <div className="w-full overflow-hidden rounded-lg">
                 <Image
                   src={`${config.IMG_DIR}${project.directory}/title.jpg`}
                   alt={project.name}
@@ -38,7 +38,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
                   height="200"
                   objectFit="cover"
                   layout="responsive"
-                  className="cursor-pointer rounded-lg transition hover:scale-105 hover:opacity-80"
+                  className="cursor-pointer transition hover:scale-105 hover:opacity-80"
                 />
               </div>
             </div>

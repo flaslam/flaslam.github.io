@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               project.source ? project.source : project.link ? project.link : ""
             }
           >
-            <a target="_blank">
+            <a target="_blank" className="overflow-hidden rounded-lg">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -52,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 height="9"
                 layout="responsive"
                 objectFit="cover"
-                className="rounded-lg transition hover:scale-105 hover:opacity-80"
+                className="transition hover:scale-105 hover:opacity-80"
                 objectPosition="top"
                 priority
               />
