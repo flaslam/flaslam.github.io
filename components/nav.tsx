@@ -2,10 +2,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { AiFillGithub } from "react-icons/ai";
+
+type TitleOrIcon = {
+  title: string | JSX.Element;
+};
 
 interface Link {
-  title: string;
+  title: string | JSX.Element;
   url: string;
+  icon?: JSX.Element;
+  newWindow?: boolean;
 }
 
 const links: Link[] = [
@@ -13,6 +20,12 @@ const links: Link[] = [
   { title: "Games", url: "/games" },
   { title: "Projects", url: "/projects" },
   { title: "About", url: "/about" },
+  {
+    title: "",
+    url: "https://github.com/flaslam",
+    icon: <AiFillGithub />,
+    newWindow: true,
+  },
 ];
 
 const Nav = () => {
@@ -22,9 +35,13 @@ const Nav = () => {
     return links.map((item, index) => (
       <div key={index}>
         <Link href={item.url}>
-          <a onClick={() => setMenuOpen(false)}>
+          <a
+            onClick={() => setMenuOpen(false)}
+            target={item.newWindow ? "_blank" : ""}
+          >
             <div className="rounded-md p-1 px-2 transition hover:text-blue-700">
               <span className="font-bold">{item.title}</span>
+              {item.icon ? item.icon : null}
             </div>
           </a>
         </Link>
@@ -56,7 +73,7 @@ const Nav = () => {
         </div>
 
         {/* Links */}
-        <div className="ml-3 hidden flex-col items-end sm:flex sm:flex-row">
+        <div className="ml-3 hidden flex-col items-center sm:flex sm:flex-row">
           {createLinks()}
         </div>
 
