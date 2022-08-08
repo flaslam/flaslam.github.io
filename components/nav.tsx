@@ -50,7 +50,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 mb-1 rounded bg-white bg-opacity-80 py-0.5 drop-shadow-lg backdrop-blur-md md:relative md:drop-shadow-none">
+    <nav className="sticky top-0 z-50 mb-1 rounded bg-white bg-opacity-20 py-0.5 backdrop-blur-md md:relative md:drop-shadow-none">
       <div
         className={`${
           menuOpen ? "mb-4" : "mb-5"
