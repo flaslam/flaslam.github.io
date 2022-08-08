@@ -9,14 +9,14 @@ interface CardProps {
 
 const GamePanel: React.FC<CardProps> = ({ game: project }) => {
   return (
-    <Link href={`${config.LINK_DIR}${project.directory}`}>
-      <a className="cursor-default">
-        <div
-          className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition hover:-translate-y-1"
-          style={{
-            backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
-          }}
-        >
+    <div
+      className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition hover:-translate-y-1"
+      style={{
+        backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
+      }}
+    >
+      <Link href={`${config.LINK_DIR}${project.directory}`}>
+        <a className="h-full w-full cursor-default">
           <div className="flex gap-8 rounded-r-xl rounded-b-xl bg-black bg-opacity-40 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-16 md:px-20">
             <div className="flex flex-col justify-center gap-4 text-white md:basis-3/5">
               <h1 className="text-2xl font-medium">
@@ -43,9 +43,9 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
               </div>
             </div>
           </div>
-        </div>
-      </a>
-    </Link>
+        </a>
+      </Link>
+    </div>
   );
 };
 
