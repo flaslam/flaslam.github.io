@@ -50,11 +50,11 @@ const Nav = () => {
   };
 
   return (
-    <nav>
+    <nav className="sticky top-0 z-50 mb-1 rounded bg-white bg-opacity-20 py-0.5 drop-shadow-lg backdrop-blur-md md:relative md:drop-shadow-none">
       <div
         className={`${
           menuOpen ? "mb-4" : "mb-5"
-        } container mx-auto mt-5 flex items-center gap-2 px-12 sm:my-10 sm:px-12 md:px-24`}
+        } container z-50 mx-auto mt-5 flex items-center gap-2 px-12 sm:my-8 sm:px-12 md:px-24`}
       >
         <div className="grow text-lg font-bold">
           <div>

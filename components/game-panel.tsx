@@ -15,7 +15,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
         backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
       }}
     >
-      <div>
+      <div className="overflow-hidden">
         <Link href={`${config.LINK_DIR}${project.directory}`}>
           <a className="h-full w-full cursor-default">
             <div className="flex gap-8 rounded-r-xl rounded-b-xl bg-black bg-opacity-40 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-16 md:px-20">
