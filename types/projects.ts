@@ -70,7 +70,7 @@ export const projects: Project[] = [
     description:
       "Multiple front-end sites built for businesses and non-profits with different tools and frameworks",
     link: "https://fahdlaslam.github.io/",
-    image: "/images/projects/hamwattan.jpg",
+    image: "/images/projects/frontend.jpg",
     technologies: [
       "Next.js",
       "React",
