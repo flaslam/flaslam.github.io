@@ -12,7 +12,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
     <Link href={`${config.LINK_DIR}${project.directory}`} passHref>
       <a className="h-full w-full cursor-default">
         <div
-          className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition hover:-translate-y-1"
+          className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition sm:hover:-translate-y-1"
           style={{
             backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
           }}
