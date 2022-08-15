@@ -20,6 +20,7 @@ export const projects: Project[] = [
       "MongoDB",
       "TypeScript (JavaScript)",
       "Tailwind CSS",
+      "AWS S3",
     ],
     link: "https://chirp-flaslam.vercel.app/",
     source: "https://github.com/flaslam/chirp",
