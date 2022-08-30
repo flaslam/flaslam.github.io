@@ -16,5 +16,6 @@ module.exports = {
       },
     },
   },
+  safelist: ["grid-cols-2", "grid-cols-3"],
   plugins: [],
 };

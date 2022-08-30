@@ -27,6 +27,15 @@ export const projects: Project[] = [
     image: "/images/projects/chirp.jpg",
   },
   {
+    name: "Twitter Mood Board",
+    description:
+      "Uses Twitter API to pull a specified user's liked tweets and display images back to the user to generate a mood board.",
+    technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
+    link: "https://twitter-board-flaslam.herokuapp.com/",
+    source: "https://github.com/flaslam/twitter-board",
+    image: "/images/projects/twitter-board.jpg",
+  },
+  {
     name: "Spotify 3D Visualiser",
     description:
       "Visualisation app which authenticates users through Spotify and uses the Spotify API to fetch user data, allowing the user to visualise their recent listening history in a 3D space.",

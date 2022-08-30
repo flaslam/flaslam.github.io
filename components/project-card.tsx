@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Top row */}
         <div className="flex gap-1">
           {/* Title */}
-          <h1 className="grow text-lg font-bold">{project.name}</h1>
+          <h1 className="grow truncate text-lg font-bold">{project.name}</h1>
           {!project.source ? null : (
             <Link href={project.source}>
               <a target="_blank" title={`View source code for ${project.name}`}>
