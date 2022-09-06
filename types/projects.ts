@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     name: "Twitter Mood Board",
     description:
-      "Uses Twitter API to pull a specified user's liked tweets and display images back to the user to generate a mood board.",
+      "Flask back-end uses Twitter API to pull data from a specified user's liked tweets and generates a mood board using the images.",
     technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
     link: "https://twitter-board-flaslam.herokuapp.com/",
     source: "https://github.com/flaslam/twitter-board",
@@ -54,16 +54,7 @@ export const projects: Project[] = [
     image: "/images/projects/blog.png",
   },
   {
-    name: "Pomodoro Timer",
-    description:
-      "Customisable timer app which stores user data and stats between sessions.",
-    link: "https://pomodoro-timer-flaslam.vercel.app/",
-    source: "https://github.com/flaslam/pomodoro-timer",
-    image: "/images/projects/pomodoro.png",
-    technologies: ["Next.js (React)", "TypeScript (JavaScript)"],
-  },
-  {
-    name: "Portfolio site",
+    name: "Portfolio Site",
     description:
       "Portfolio frontend built in Next.js and TypeScript to display my work and projects.",
     technologies: [
@@ -76,9 +67,18 @@ export const projects: Project[] = [
     image: "/images/projects/portfolio.jpg",
   },
   {
-    name: "Frontend sites",
+    name: "Pomodoro Timer",
     description:
-      "Multiple front-end sites built for businesses and non-profits with different tools and frameworks",
+      "Customisable timer app which stores user data and stats between sessions.",
+    link: "https://pomodoro-timer-flaslam.vercel.app/",
+    source: "https://github.com/flaslam/pomodoro-timer",
+    image: "/images/projects/pomodoro.png",
+    technologies: ["Next.js (React)", "TypeScript (JavaScript)"],
+  },
+  {
+    name: "Frontend Sites",
+    description:
+      "Multiple front-end sites built for businesses and non-profits using various tools and frameworks",
     link: "https://fahdlaslam.github.io/",
     image: "/images/projects/frontend.jpg",
     technologies: [

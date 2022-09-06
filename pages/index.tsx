@@ -10,11 +10,7 @@ import GamesLayout from "../components/games-layout";
 
 const Home: NextPage = () => {
   const favProjects = projects.filter((element) => {
-    const favProjectsQuery = [
-      "Chirp",
-      "Twitter Mood Board",
-      "Spotify 3D Visualiser",
-    ];
+    const favProjectsQuery = ["Chirp", "Twitter Mood Board"];
     if (favProjectsQuery.includes(element.name)) return true;
   });
 

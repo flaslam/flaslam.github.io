@@ -8,7 +8,7 @@ interface ProjectsLayoutProps {
 
 const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ projects }) => {
   return (
-    <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3`}>
+    <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2`}>
       {projects.map((project, index) => (
         <motion.div
           initial={{ opacity: 0, translateY: -75 }}
