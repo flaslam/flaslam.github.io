@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     name: "Twitter Mood Board",
     description:
-      "Flask back-end uses Twitter API to pull data from a specified user's liked tweets and generates a mood board using the images.",
+      "Flask app that uses the Twitter API to pull data from a specified user's liked tweets and generates a mood board using the images.",
     technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
     link: "https://twitter-board-flaslam.herokuapp.com/",
     source: "https://github.com/flaslam/twitter-board",
@@ -67,18 +67,9 @@ export const projects: Project[] = [
     image: "/images/projects/portfolio.jpg",
   },
   {
-    name: "Pomodoro Timer",
-    description:
-      "Customisable timer app which stores user data and stats between sessions.",
-    link: "https://pomodoro-timer-flaslam.vercel.app/",
-    source: "https://github.com/flaslam/pomodoro-timer",
-    image: "/images/projects/pomodoro.png",
-    technologies: ["Next.js (React)", "TypeScript (JavaScript)"],
-  },
-  {
     name: "Frontend Sites",
     description:
-      "Multiple front-end sites built for businesses and non-profits using various tools and frameworks",
+      "Multiple front-end sites built for businesses and non-profits using various tools and frameworks (recent works to be added)",
     link: "https://fahdlaslam.github.io/",
     image: "/images/projects/frontend.jpg",
     technologies: [
@@ -88,5 +79,14 @@ export const projects: Project[] = [
       "JavaScript",
       "CSS/SASS/Tailwind CSS/Bootstrap",
     ],
+  },
+  {
+    name: "Pomodoro Timer",
+    description:
+      "Customisable timer app which stores user data and stats between sessions.",
+    link: "https://pomodoro-timer-flaslam.vercel.app/",
+    source: "https://github.com/flaslam/pomodoro-timer",
+    image: "/images/projects/pomodoro.png",
+    technologies: ["Next.js (React)", "TypeScript (JavaScript)"],
   },
 ];

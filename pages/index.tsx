@@ -33,9 +33,10 @@ const Home: NextPage = () => {
         <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
-            Recent web projects{" "}
             <Link href="/projects">
-              <a className="hover:text-blue-600">(more)</a>
+              <a className="transition hover:text-blue-600">
+                Recent web projects (more)
+              </a>
             </Link>
           </div>
 
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
 
           {/* See more text */}
           <Link href="/projects">
-            <a className="hover:text-blue-600">
+            <a className="transition hover:text-blue-600">
               <div className="my-4 flex justify-end font-medium">See more</div>
             </a>
           </Link>
@@ -54,9 +55,10 @@ const Home: NextPage = () => {
         <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
-            Recent game projects{" "}
             <Link href="/games">
-              <a className="hover:text-blue-600">(more)</a>
+              <a className="transition hover:text-blue-600">
+                Recent game projects (more)
+              </a>
             </Link>
           </div>
 
