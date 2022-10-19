@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {!project.link ? null : (
             <Link href={project.link}>
               <a
-                target="_blank"
+                target={project.internal ? "_self" : "_blank"}
                 title={`View deployed project for ${project.name}`}
               >
                 <MdOpenInBrowser className="text-xl transition hover:text-gray-500" />
@@ -44,7 +44,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               project.source ? project.source : project.link ? project.link : ""
             }
           >
-            <a target="_blank" className="overflow-hidden rounded-lg">
+            <a
+              target={project.internal ? "_self" : "_blank"}
+              className="overflow-hidden rounded-lg"
+            >
               <Image
                 src={project.image}
                 alt={project.name}

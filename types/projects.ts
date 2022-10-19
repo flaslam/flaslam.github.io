@@ -1,12 +1,13 @@
 export interface Project {
   name: string;
-  description: string;
+  description?: string;
   languages?: string[];
   technologies?: string[];
   link?: string;
   source?: string;
   features?: string[];
   image?: string;
+  internal?: boolean;
 }
 
 export const projects: Project[] = [
@@ -54,23 +55,11 @@ export const projects: Project[] = [
     image: "/images/projects/blog.png",
   },
   {
-    name: "Portfolio Site",
-    description:
-      "Portfolio frontend built in Next.js and TypeScript to display my work and projects.",
-    technologies: [
-      "Next.js (React)",
-      "TypeScript (JavaScript)",
-      "Tailwind CSS",
-    ],
-    link: "https://flaslam.github.io/",
-    source: "https://github.com/flaslam/flaslam.github.io",
-    image: "/images/projects/portfolio.jpg",
-  },
-  {
     name: "Frontend Sites",
     description:
       "Multiple front-end sites built for businesses and non-profits using various tools and frameworks (recent works to be added)",
-    link: "https://fahdlaslam.github.io/",
+    link: "/sites",
+    internal: true,
     image: "/images/projects/frontend.jpg",
     technologies: [
       "Next.js",
@@ -88,5 +77,65 @@ export const projects: Project[] = [
     source: "https://github.com/flaslam/pomodoro-timer",
     image: "/images/projects/pomodoro.png",
     technologies: ["Next.js (React)", "TypeScript (JavaScript)"],
+  },
+];
+
+export const sites: Project[] = [
+  {
+    name: "Portfolio Site",
+    technologies: [
+      "Next.js (React)",
+      "TypeScript (JavaScript)",
+      "Tailwind CSS",
+    ],
+    link: "https://flaslam.github.io/",
+    source: "https://github.com/flaslam/flaslam.github.io",
+    image: "/images/sites/portfolio.jpg",
+  },
+  {
+    name: "Hamwattan Centre",
+    technologies: [
+      "Next.js (React)",
+      "TypeScript (JavaScript)",
+      "Tailwind CSS",
+    ],
+    image: "/images/sites/hamwattan.jpg",
+    link: "https://www.hamwattancentre.org.uk/",
+  },
+  {
+    name: "Puppets Bunker",
+    image: "/images/sites/puppets-bunker.jpg",
+    technologies: ["Jekyll", "Bootstrap", "HTML/CSS"],
+    link: "https://fahdlaslam.github.io/puppetsbunker/",
+  },
+  {
+    name: "Mylo Reid VO",
+    image: "/images/sites/mylo-reid.jpg",
+    technologies: ["Jekyll", "Bootstrap", "HTML/CSS"],
+    link: "https://myloreid.com/",
+  },
+  {
+    name: "Al Fahd Spa & Fitness Club",
+    link: "https://alfahd.com.pk/",
+    image: "/images/sites/al-fahd.jpg",
+    technologies: ["JavaScript", "HTML/CSS"],
+  },
+  {
+    name: "Brash Pursuits",
+    technologies: ["Jekyll", "Bootstrap", "HTML/CSS"],
+    image: "/images/sites/brash-pursuits.jpg",
+    link: "https://brashpursuits.github.io/",
+  },
+  {
+    name: "Indoor Football League",
+    technologies: ["Jekyll", "Bootstrap", "HTML/CSS"],
+    image: "/images/sites/ifl.jpg",
+    link: "https://ifluk.github.io/",
+  },
+  {
+    name: "Satorika Gaming",
+    technologies: ["Tumblr", "JavaScript", "HTML/CSS"],
+    link: "https://satorikagaming.tumblr.com/",
+    image: "/images/sites/satorika.jpg",
   },
 ];

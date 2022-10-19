@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           <div className="my-4 text-xl font-bold">
             <Link href="/projects">
               <a className="transition hover:text-blue-600">
-                Recent web projects (more)
+                Recent web projects (view more)
               </a>
             </Link>
           </div>
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
           <div className="my-4 text-xl font-bold">
             <Link href="/games">
               <a className="transition hover:text-blue-600">
-                Recent game projects (more)
+                Recent game projects (view more)
               </a>
             </Link>
           </div>
