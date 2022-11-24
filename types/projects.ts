@@ -103,6 +103,16 @@ export const sites: Project[] = [
     link: "https://www.hamwattancentre.org.uk/",
   },
   {
+    name: "Grass Konbini",
+    technologies: [
+      "Next.js (React)",
+      "TypeScript (JavaScript)",
+      "Tailwind CSS",
+    ],
+    image: "/images/sites/grass-konbini.png",
+    link: "https://grasskonbini.vercel.app/",
+  },
+  {
     name: "Puppets Bunker",
     image: "/images/sites/puppets-bunker.jpg",
     technologies: ["Jekyll", "Bootstrap", "HTML/CSS"],
@@ -134,7 +144,7 @@ export const sites: Project[] = [
   },
   {
     name: "Satorika Gaming",
-    technologies: ["Tumblr", "JavaScript", "HTML/CSS"],
+    technologies: ["JavaScript", "HTML/CSS"],
     link: "https://satorikagaming.tumblr.com/",
     image: "/images/sites/satorika.jpg",
   },
