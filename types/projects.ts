@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       "Flask app that uses the Twitter API to pull data from a specified user's liked tweets and generates a mood board using the images.",
     technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
-    link: "https://twitter-board-flaslam.herokuapp.com/",
+    link: "https://twitter-board.onrender.com/",
     source: "https://github.com/flaslam/twitter-board",
     image: "/images/projects/twitter-board.jpg",
   },
