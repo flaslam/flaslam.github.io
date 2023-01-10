@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Layout from "../components/layouts/layout";
+import Layout from "../components/layouts/model";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Visual from "../components/visual";
@@ -9,15 +9,9 @@ import ProjectsLayout from "../components/projects-layout";
 import GamesLayout from "../components/games-layout";
 
 const Home: NextPage = () => {
-  const favProjects = projects.filter((element) => {
-    const favProjectsQuery = ["Chirp", "Twitter Mood Board"];
-    if (favProjectsQuery.includes(element.name)) return true;
-  });
-
-  const favGames = games.filter((element) => {
-    const favGamesQuery = ["Distance", "Respite"];
-    if (favGamesQuery.includes(element.name)) return true;
-  });
+  const recentProjectLimit = 2;
+  const favProjects = projects.slice(0, recentProjectLimit);
+  const favGames = games.slice(0, recentProjectLimit);
 
   return (
     <Layout>
@@ -25,10 +19,6 @@ const Home: NextPage = () => {
         initial={{ opacity: 0, translateY: -75 }}
         animate={{ opacity: 1, translateY: 0 }}
       >
-        <div className="container mx-auto mb-12 flex justify-center">
-          <Visual />
-        </div>
-
         {/* Web projects */}
         <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}

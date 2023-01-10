@@ -2,7 +2,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,6 +19,12 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
     THREE.TextureLoader,
     "/models/leopolds-dreams-1x.png"
   );
+
+  useFrame(() => {
+    if (!group.current) return;
+    group.current.rotation.y -= 0.025;
+  });
+
   const newMat = new THREE.MeshToonMaterial({ map: texture });
 
   const group = useRef<THREE.Group>(null);

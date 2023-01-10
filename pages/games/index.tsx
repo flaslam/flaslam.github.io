@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
-import Layout from "../../components/layouts/layout";
+import MainLayout from "../../components/layouts/main";
 import GamesLayout from "../../components/games-layout";
 import { games } from "../../types/games";
 import { motion } from "framer-motion";
 
 const Games: NextPage = () => {
   return (
-    <Layout title="Games">
+    <MainLayout title="Games">
       <motion.div
         initial={{ opacity: 0, translateY: -75 }}
         animate={{ opacity: 1, translateY: 0 }}
@@ -15,7 +15,7 @@ const Games: NextPage = () => {
           <GamesLayout games={games} />
         </div>
       </motion.div>
-    </Layout>
+    </MainLayout>
   );
 };
 

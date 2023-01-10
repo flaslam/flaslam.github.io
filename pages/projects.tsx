@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import { projects } from "../types/projects";
-import Layout from "../components/layouts/layout";
+import MainLayout from "../components/layouts/main";
 import { motion } from "framer-motion";
 import ProjectsLayout from "../components/projects-layout";
 
 const Projects: NextPage = () => {
   return (
-    <Layout title="Projects">
+    <MainLayout title="Projects">
       <motion.div
         initial={{ opacity: 0, translateY: -75 }}
         animate={{ opacity: 1, translateY: 0 }}
@@ -15,7 +15,7 @@ const Projects: NextPage = () => {
           <ProjectsLayout projects={projects} />
         </div>
       </motion.div>
-    </Layout>
+    </MainLayout>
   );
 };
 

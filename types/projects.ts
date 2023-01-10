@@ -103,6 +103,17 @@ export const sites: Project[] = [
     link: "https://www.hamwattancentre.org.uk/",
   },
   {
+    name: "Making Homes",
+    technologies: [
+      "Next.js (React)",
+      "TypeScript (JavaScript)",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    image: "/images/sites/making-homes.jpg",
+    link: "https://www.making-homes.com/",
+  },
+  {
     name: "Grass Konbini",
     technologies: [
       "Next.js (React)",

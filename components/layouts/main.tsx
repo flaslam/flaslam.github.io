@@ -8,7 +8,7 @@ interface Props {
   title?: string | null;
 }
 
-const Layout: NextPage<Props> = ({ children, title }) => {
+const MainLayout: NextPage<Props> = ({ children, title }) => {
   const pageTitle = title ? `Fahd Aslam | ${title}` : "Fahd Aslam";
 
   return (
@@ -25,4 +25,4 @@ const Layout: NextPage<Props> = ({ children, title }) => {
   );
 };
 
-export default Layout;
+export default MainLayout;

@@ -4,7 +4,7 @@ import { config } from "../../config";
 import Image from "next/image";
 import Back from "../../components/back";
 import { NextPage } from "next";
-import Layout from "../../components/layouts/layout";
+import MainLayout from "../../components/layouts/main";
 import { motion } from "framer-motion";
 import { PuffLoader } from "react-spinners";
 
@@ -33,7 +33,7 @@ const Game: NextPage<GameProps> = (props) => {
   }, []);
 
   return (
-    <Layout title={project ? project.name : null}>
+    <MainLayout title={project ? project.name : null}>
       <div>
         {/* Loading until page displays */}
         {!project ? (
@@ -144,7 +144,7 @@ const Game: NextPage<GameProps> = (props) => {
           </motion.div>
         )}
       </div>
-    </Layout>
+    </MainLayout>
   );
 };
 
