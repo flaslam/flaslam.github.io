@@ -9,7 +9,7 @@ type TitleOrIcon = {
 };
 
 interface Link {
-  title: string | JSX.Element;
+  title?: string | JSX.Element;
   url: string;
   icon?: JSX.Element;
   newWindow?: boolean;
@@ -21,7 +21,6 @@ const links: Link[] = [
   { title: "Projects", url: "/projects" },
   { title: "About", url: "/about" },
   {
-    title: "",
     url: "https://github.com/flaslam",
     icon: <AiFillGithub />,
     newWindow: true,
@@ -66,7 +65,7 @@ const Nav = () => {
           <div>
             <Link href="/">
               <a onClick={() => setMenuOpen(false)}>
-                <span className="text-gray-500">Game &amp; Web Developer</span>
+                <span className="text-gray-500">Software Developer</span>
               </a>
             </Link>
           </div>

@@ -10,6 +10,7 @@ const Games: NextPage = () => {
       <motion.div
         initial={{ opacity: 0, translateY: -75 }}
         animate={{ opacity: 1, translateY: 0 }}
+        className="mx-auto max-w-screen-lg"
       >
         <div className="container mx-auto px-6 pb-4 sm:px-12">
           <GamesLayout games={games} />

@@ -55,7 +55,7 @@ export const projects: Project[] = [
     image: "/images/projects/blog.png",
   },
   {
-    name: "Front-end Sites",
+    name: "Front end Sites",
     description:
       "Multiple front-end sites built for businesses and non-profits using various tools and frameworks (recent works to be added)",
     link: "/sites",
