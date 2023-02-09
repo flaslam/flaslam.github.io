@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Nav from "../nav";
 import Footer from "../footer";
+import { motion } from "framer-motion";
+import { pageDefault } from "../../data/animation";
 
 interface Props {
   children: any;
@@ -19,7 +21,14 @@ const MainLayout: NextPage<Props> = ({ children, title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <main>{children}</main>
+      <motion.main
+        variants={pageDefault}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+      >
+        {children}
+      </motion.main>
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import GamePanel from "./game-panel";
 import { Game } from "../types/games";
 import { motion } from "framer-motion";
+import { staggerChild, staggerParent } from "../data/animation";
 
 interface GamesProps {
   games: Game[];
@@ -8,18 +9,18 @@ interface GamesProps {
 
 const GamesLayout: React.FC<GamesProps> = ({ games }) => {
   return (
-    <div className="flex flex-col gap-12">
+    <motion.div
+      className="flex flex-col gap-12"
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="show"
+    >
       {games.map((game, index) => (
-        <motion.div
-          initial={{ opacity: 0, translateY: -75 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: index * 0.125 }}
-          key={index}
-        >
+        <motion.div variants={staggerChild} key={index}>
           <GamePanel game={game} />
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

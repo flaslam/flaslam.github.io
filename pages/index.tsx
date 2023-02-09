@@ -1,12 +1,10 @@
 import { NextPage } from "next";
-import Layout from "../components/layouts/model";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import Visual from "../components/visual";
-import { projects } from "../types/projects";
-import { games } from "../types/games";
+import Layout from "../components/layouts/main";
 import ProjectsLayout from "../components/projects-layout";
 import GamesLayout from "../components/games-layout";
+import { projects } from "../types/projects";
+import { games } from "../types/games";
 
 const Home: NextPage = () => {
   const recentProjectLimit = 2;
@@ -15,11 +13,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <motion.div
-        initial={{ opacity: 0, translateY: -75 }}
-        animate={{ opacity: 1, translateY: 0 }}
-        className="mx-auto max-w-screen-lg"
-      >
+      <div className="mx-auto max-w-screen-lg">
         {/* Web projects */}
         <div className="container mx-auto mb-6 px-6 pb-4 sm:px-12">
           {/* Section title */}
@@ -63,7 +57,7 @@ const Home: NextPage = () => {
             </a>
           </Link>
         </div>
-      </motion.div>
+      </div>
     </Layout>
   );
 };

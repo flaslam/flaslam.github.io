@@ -4,10 +4,6 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 
-type TitleOrIcon = {
-  title: string | JSX.Element;
-};
-
 interface Link {
   title?: string | JSX.Element;
   url: string;

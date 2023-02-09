@@ -5,7 +5,6 @@ import Image from "next/image";
 import Back from "../../components/back";
 import { NextPage } from "next";
 import MainLayout from "../../components/layouts/main";
-import { motion } from "framer-motion";
 import { PuffLoader } from "react-spinners";
 
 interface GameProps {
@@ -41,10 +40,7 @@ const Game: NextPage<GameProps> = (props) => {
             <PuffLoader />
           </div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, translateY: -75 }}
-            animate={{ opacity: 1, translateY: 0 }}
-          >
+          <div>
             {/* Background image */}
             <div
               className="bg-cover bg-center"
@@ -141,7 +137,7 @@ const Game: NextPage<GameProps> = (props) => {
 
               <Back>Back to games</Back>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
     </MainLayout>
