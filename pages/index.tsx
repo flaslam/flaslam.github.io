@@ -6,11 +6,11 @@ import GamesLayout from "../components/games-layout";
 import { projects } from "../types/projects";
 import { games } from "../types/games";
 
-const Home: NextPage = () => {
-  const recentProjectLimit = 2;
-  const favProjects = projects.slice(0, recentProjectLimit);
-  const favGames = games.slice(0, recentProjectLimit);
+const RECENT_PROJECT_LIMIT = 2;
+const favProjects = projects.slice(0, RECENT_PROJECT_LIMIT);
+const favGames = games.slice(0, RECENT_PROJECT_LIMIT);
 
+const Home: NextPage = () => {
   return (
     <Layout>
       <div className="mx-auto max-w-screen-lg">
@@ -19,9 +19,9 @@ const Home: NextPage = () => {
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
             <Link href="/projects">
-              <a className="transition hover:text-blue-600">
+              <div className="transition hover:text-blue-600">
                 Recent web projects (view more)
-              </a>
+              </div>
             </Link>
           </div>
 
@@ -30,9 +30,9 @@ const Home: NextPage = () => {
 
           {/* See more text */}
           <Link href="/projects">
-            <a className="transition hover:text-blue-600">
+            <div className="transition hover:text-blue-600">
               <div className="my-4 flex justify-end font-medium">See more</div>
-            </a>
+            </div>
           </Link>
         </div>
 
@@ -41,9 +41,9 @@ const Home: NextPage = () => {
           {/* Section title */}
           <div className="my-4 text-xl font-bold">
             <Link href="/games">
-              <a className="transition hover:text-blue-600">
+              <div className="transition hover:text-blue-600">
                 Recent game projects (view more)
-              </a>
+              </div>
             </Link>
           </div>
 
@@ -52,9 +52,9 @@ const Home: NextPage = () => {
 
           {/* See more text */}
           <Link href="/games">
-            <a className="hover:text-blue-600">
+            <div className="hover:text-blue-600">
               <div className="my-4 flex justify-end font-medium">See more</div>
-            </a>
+            </div>
           </Link>
         </div>
       </div>

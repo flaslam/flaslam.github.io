@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Game, games } from "../../types/games";
-import { config } from "../../config";
-import Image from "next/image";
+import { paths } from "../../data/paths";
+import Image from "next/legacy/image";
 import Back from "../../components/back";
 import { NextPage } from "next";
 import MainLayout from "../../components/layouts/main";
@@ -45,7 +45,7 @@ const Game: NextPage<GameProps> = (props) => {
             <div
               className="bg-cover bg-center"
               style={{
-                backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
+                backgroundImage: `url(${paths.IMG_DIR}${project.directory}/bg.jpg)`,
               }}
             >
               {/* White background overlay */}
@@ -82,7 +82,7 @@ const Game: NextPage<GameProps> = (props) => {
                     <div className="flex items-center justify-center px-2 md:basis-1/2">
                       <div className="w-full md:p-6">
                         <Image
-                          src={`${config.IMG_DIR}${project.directory}/title.jpg`}
+                          src={`${paths.IMG_DIR}${project.directory}/title.jpg`}
                           alt={project.name}
                           width="200"
                           height="200"
@@ -110,7 +110,7 @@ const Game: NextPage<GameProps> = (props) => {
                           playsInline
                         >
                           <source
-                            src={`${config.IMG_DIR}${project.directory}/${index}.mp4`}
+                            src={`${paths.IMG_DIR}${project.directory}/${index}.mp4`}
                             type="video/mp4"
                           />
                         </video>
@@ -124,7 +124,7 @@ const Game: NextPage<GameProps> = (props) => {
                     return (
                       <div key={index}>
                         <Image
-                          src={`${config.IMG_DIR}${project.directory}/${index}.jpg`}
+                          src={`${paths.IMG_DIR}${project.directory}/${index}.jpg`}
                           alt={index.toString()}
                           width="16"
                           height="9"

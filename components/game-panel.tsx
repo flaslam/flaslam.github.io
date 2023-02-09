@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { Game } from "../types/games";
-import { config } from "../config";
+import { paths } from "../data/paths";
 
 interface CardProps {
   game: Game;
@@ -9,12 +9,12 @@ interface CardProps {
 
 const GamePanel: React.FC<CardProps> = ({ game: project }) => {
   return (
-    <Link href={`${config.LINK_DIR}${project.directory}`} passHref>
-      <a className="h-full w-full cursor-default" target="_self">
+    <Link href={`${paths.LINK_DIR}${project.directory}`} target="_self">
+      <div className="h-full w-full cursor-default">
         <div
           className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition hover:-translate-y-1"
           style={{
-            backgroundImage: `url(${config.IMG_DIR}${project.directory}/bg.jpg)`,
+            backgroundImage: `url(${paths.IMG_DIR}${project.directory}/bg.jpg)`,
           }}
         >
           <div className="overflow-hidden">
@@ -33,7 +33,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
               <div className="items-right hidden grow basis-1/3 items-center justify-end md:flex">
                 <div className="w-full overflow-hidden rounded-lg">
                   <Image
-                    src={`${config.IMG_DIR}${project.directory}/title.jpg`}
+                    src={`${paths.IMG_DIR}${project.directory}/title.jpg`}
                     alt={project.name}
                     width="200"
                     height="200"
@@ -46,7 +46,7 @@ const GamePanel: React.FC<CardProps> = ({ game: project }) => {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </Link>
   );
 };

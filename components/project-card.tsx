@@ -2,7 +2,7 @@ import { Project } from "../types/projects";
 import { AiFillGithub } from "react-icons/ai";
 import { MdOpenInBrowser } from "react-icons/md";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -17,22 +17,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* Title */}
           <h1 className="grow truncate text-lg font-bold">{project.name}</h1>
           {!project.source ? null : (
-            <Link href={project.source}>
-              <a target="_blank" title={`View source code for ${project.name}`}>
+            <Link
+              href={project.source}
+              target="_blank"
+              title={`View source code for ${project.name}`}
+            >
+              <div>
                 <AiFillGithub className="text-xl transition hover:text-gray-500" />
-              </a>
+              </div>
             </Link>
           )}
 
           {/* Icons */}
           {!project.link ? null : (
-            <Link href={project.link}>
-              <a
-                target={project.internal ? "_self" : "_blank"}
-                title={`View deployed project for ${project.name}`}
-              >
+            <Link
+              href={project.link}
+              target={project.internal ? "_self" : "_blank"}
+              title={`View deployed project for ${project.name}`}
+            >
+              <div>
                 <MdOpenInBrowser className="text-xl transition hover:text-gray-500" />
-              </a>
+              </div>
             </Link>
           )}
         </div>
@@ -43,11 +48,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             href={
               project.source ? project.source : project.link ? project.link : ""
             }
+            target={project.internal ? "_self" : "_blank"}
           >
-            <a
-              target={project.internal ? "_self" : "_blank"}
-              className="overflow-hidden rounded-lg"
-            >
+            <div className="overflow-hidden rounded-lg">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -59,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 objectPosition="top"
                 priority
               />
-            </a>
+            </div>
           </Link>
         )}
 

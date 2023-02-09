@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -29,16 +29,17 @@ const Nav = () => {
   const createLinks = () => {
     return links.map((item, index) => (
       <div key={index}>
-        <Link href={item.url}>
-          <a
-            onClick={() => setMenuOpen(false)}
-            target={item.newWindow ? "_blank" : ""}
-          >
+        <Link
+          href={item.url}
+          onClick={() => setMenuOpen(false)}
+          target={item.newWindow ? "_blank" : ""}
+        >
+          <div>
             <div className="rounded-md p-1 px-2 transition hover:text-blue-700">
               <span className="font-bold">{item.title}</span>
               {item.icon ? item.icon : null}
             </div>
-          </a>
+          </div>
         </Link>
       </div>
     ));
@@ -53,16 +54,16 @@ const Nav = () => {
       >
         <div className="grow text-lg font-bold">
           <div>
-            <Link href="/">
-              <a onClick={() => setMenuOpen(false)}>Fahd Aslam</a>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              <div>Fahd Aslam</div>
             </Link>
           </div>
 
           <div>
-            <Link href="/">
-              <a onClick={() => setMenuOpen(false)}>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              <div>
                 <span className="text-gray-500">Software Developer</span>
-              </a>
+              </div>
             </Link>
           </div>
         </div>
@@ -84,14 +85,19 @@ const Nav = () => {
           )}
         </button>
       </div>
-      {!menuOpen ? null : (
-        <motion.div
-          initial={{ opacity: 0, translateY: -50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-        >
-          <div className="mx-10 pb-8 sm:hidden">{createLinks()}</div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {!menuOpen ? null : (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="mx-10 pb-8 sm:hidden">{createLinks()}</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

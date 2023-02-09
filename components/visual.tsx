@@ -1,10 +1,10 @@
-import {
-  BakeShadows,
-  MeshReflectorMaterial,
-  OrbitControls,
-  OrthographicCamera,
-  PerspectiveCamera,
-} from "@react-three/drei";
+// import {
+//   BakeShadows,
+//   MeshReflectorMaterial,
+//   OrbitControls,
+//   OrthographicCamera,
+//   PerspectiveCamera,
+// } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 // import Vector3 from "three";
 import EvaModel from "./models/EvaEdit";
@@ -41,12 +41,12 @@ const Visual = () => {
     <div className="h-96 w-full">
       <Canvas shadows>
         <directionalLight intensity={0.5} position={[30, 4, 30]} />
-        <PerspectiveCamera
+        {/* <PerspectiveCamera
           makeDefault
           position={[-0, 0, 0]}
           zoom={1}
           fov={30}
-        />
+        /> */}
 
         <ambientLight intensity={10} color="white" />
         <pointLight
@@ -77,7 +77,7 @@ const Visual = () => {
             intensity={8}
           />
         </EffectComposer>
-        <BakeShadows />
+        {/* <BakeShadows /> */}
         <Rig />
       </Canvas>
     </div>
