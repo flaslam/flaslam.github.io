@@ -1,7 +1,7 @@
 import { Project } from "../types/projects";
 import ProjectCard from "./project-card";
 import { motion } from "framer-motion";
-import { staggerChild, staggerParent } from "../data/animation";
+import { staggerChild, staggerParent } from "../data/animations";
 
 interface ProjectsLayoutProps {
   projects: Project[];
