@@ -46,15 +46,6 @@ export const projects: Project[] = [
     image: "/images/projects/spotify.jpg",
   },
   {
-    name: "Blog Client/CMS/API",
-    description:
-      "Full-stack blog with a backend Node.js REST API, frontend CMS built in React and frontend client built in Next.js",
-    link: "https://blog-client-flaslam.vercel.app/",
-    source: "https://github.com/flaslam/blog-api",
-    technologies: ["Next.js", "React", "JavaScript", "MongoDB"],
-    image: "/images/projects/blog.png",
-  },
-  {
     name: "Front End Sites",
     description:
       "Multiple front end sites built for businesses and non-profits using various tools and frameworks (recent works to be added)",
@@ -68,6 +59,15 @@ export const projects: Project[] = [
       "JavaScript",
       "CSS/SASS/Tailwind CSS/Bootstrap",
     ],
+  },
+  {
+    name: "Blog Client/CMS/API",
+    description:
+      "Full-stack blog with a backend Node.js REST API, frontend CMS built in React and frontend client built in Next.js",
+    link: "https://blog-client-flaslam.vercel.app/",
+    source: "https://github.com/flaslam/blog-api",
+    technologies: ["Next.js", "React", "JavaScript", "MongoDB"],
+    image: "/images/projects/blog.png",
   },
   {
     name: "Pomodoro Timer",
@@ -93,16 +93,6 @@ export const sites: Project[] = [
     image: "/images/sites/portfolio.jpg",
   },
   {
-    name: "Hamwattan Centre",
-    technologies: [
-      "Next.js (React)",
-      "TypeScript (JavaScript)",
-      "Tailwind CSS",
-    ],
-    image: "/images/sites/hamwattan.jpg",
-    link: "https://www.hamwattancentre.org.uk/",
-  },
-  {
     name: "Making Homes",
     technologies: [
       "Next.js (React)",
@@ -112,6 +102,16 @@ export const sites: Project[] = [
     ],
     image: "/images/sites/making-homes.jpg",
     link: "https://www.making-homes.com/",
+  },
+  {
+    name: "Hamwattan Centre",
+    technologies: [
+      "Next.js (React)",
+      "TypeScript (JavaScript)",
+      "Tailwind CSS",
+    ],
+    image: "/images/sites/hamwattan.jpg",
+    link: "https://www.hamwattancentre.org.uk/",
   },
   {
     name: "Grass Konbini",

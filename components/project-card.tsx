@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         )}
 
         {/* Description */}
-        <p>{project.description}</p>
+        {project.description && <p>{project.description}</p>}
 
         {/* Technologies */}
         {!project.technologies ? null : (
