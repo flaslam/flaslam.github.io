@@ -11,7 +11,7 @@ interface Props {
 }
 
 const MainLayout: NextPage<Props> = ({ children, title }) => {
-  const pageTitle = title ? `Fahd Aslam | ${title}` : "Fahd Aslam";
+  const pageTitle = title ? `${title} — Fahd Aslam` : "Fahd Aslam";
 
   return (
     <>
