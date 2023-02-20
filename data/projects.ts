@@ -59,13 +59,13 @@ export const projects: Project[] = [
     technologies: ["React", "Next.js", "JavaScript", "MongoDB"],
     image: "/images/projects/blog.png",
   },
-  {
-    name: "Pomodoro Timer",
-    description:
-      "Customisable timer app which stores user data and stats between sessions.",
-    link: "https://pomodoro-timer-flaslam.vercel.app/",
-    source: "https://github.com/flaslam/pomodoro-timer",
-    image: "/images/projects/pomodoro.png",
-    technologies: ["React", "Next.js", "TypeScript (JavaScript)"],
-  },
+  // {
+  //   name: "Pomodoro Timer",
+  //   description:
+  //     "Customisable timer app which stores user data and stats between sessions.",
+  //   link: "https://pomodoro-timer-flaslam.vercel.app/",
+  //   source: "https://github.com/flaslam/pomodoro-timer",
+  //   image: "/images/projects/pomodoro.png",
+  //   technologies: ["React", "Next.js", "TypeScript (JavaScript)"],
+  // },
 ];
