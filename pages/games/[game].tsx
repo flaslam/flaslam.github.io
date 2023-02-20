@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Game, games } from "../../types/games";
+import { Game } from "../../types/games";
+import { games } from "../../data/games";
 import { paths } from "../../data/paths";
 import Image from "next/legacy/image";
 import Back from "../../components/back";

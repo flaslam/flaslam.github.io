@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import MainLayout from "../../components/layouts/main";
 import GamesLayout from "../../components/games-layout";
-import { games } from "../../types/games";
+import { games } from "../../data/games";
 
 const Games: NextPage = () => {
   return (

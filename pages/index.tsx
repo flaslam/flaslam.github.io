@@ -1,10 +1,10 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Layout from "../components/layouts/main";
+import Layout from "../components/layouts/model";
 import ProjectsLayout from "../components/projects-layout";
 import GamesLayout from "../components/games-layout";
-import { projects } from "../types/projects";
-import { games } from "../types/games";
+import { projects } from "../data/projects";
+import { games } from "../data/games";
 
 const RECENT_PROJECT_LIMIT = 2;
 const favProjects = projects.slice(0, RECENT_PROJECT_LIMIT);

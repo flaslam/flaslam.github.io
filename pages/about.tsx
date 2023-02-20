@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import Layout from "../components/layouts/main";
+import Layout from "../components/layouts/model";
 
 const About: NextPage = () => {
   const technologies = [

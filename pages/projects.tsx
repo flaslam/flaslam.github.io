@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { projects } from "../types/projects";
+import { projects } from "../data/projects";
 import MainLayout from "../components/layouts/main";
 import ProjectsLayout from "../components/projects-layout";
 

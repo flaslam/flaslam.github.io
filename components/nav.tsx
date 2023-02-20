@@ -13,8 +13,8 @@ interface Link {
 
 const links: Link[] = [
   { title: "Home", url: "/" },
-  { title: "Games", url: "/games" },
   { title: "Projects", url: "/projects" },
+  { title: "Games", url: "/games" },
   { title: "About", url: "/about" },
   {
     url: "https://github.com/flaslam",
