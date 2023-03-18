@@ -1,4 +1,4 @@
 export const paths = {
-  LINK_DIR: "/games/",
-  IMG_DIR: "/images/games/",
+  LINK_DIR: "/games",
+  IMG_DIR: "/images/games",
 };

@@ -4,7 +4,7 @@ export const games: Game[] = [
   {
     directory: "distance",
     name: "Distance",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "3D action RPG featuring procedurally generated levels, fast-paced enemy combat encounters and story elements in between levels.",
     abouts: [
@@ -22,7 +22,7 @@ export const games: Game[] = [
   {
     directory: "respite",
     name: "Respite",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "3D point-and-click narrative game featuring hand-crafted environments and stories about left behind spaces.",
     abouts: [
@@ -36,7 +36,7 @@ export const games: Game[] = [
   {
     directory: "weknowthetruth",
     name: "We Know The Truth",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "Visual novel featuring a branching narrative and point-and-click explorable 3D environments with decision based consequences and multiple endings.",
 
@@ -50,7 +50,7 @@ export const games: Game[] = [
   {
     directory: "superstakeout",
     name: "Super Stakeout",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "First-person adventure game. A narrative-driven simulation of hardboiled, on-the-ground detective work set in 1985 as a string of serial murders rock San Francisco.",
     abouts: [
@@ -64,7 +64,7 @@ export const games: Game[] = [
   {
     directory: "bloodshot",
     name: "Bloodshot",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "Isometric 3D stealth action game focused on disposing of enemies within a time-limit using limited resources.",
     abouts: [
@@ -78,7 +78,7 @@ export const games: Game[] = [
   {
     directory: "scramble",
     name: "Scramble",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "Local multiplayer top-down 3D beat-em-up game where up to four players face off in fast-paced combat using varied weapons and abilities.",
     abouts: [
@@ -91,7 +91,7 @@ export const games: Game[] = [
   {
     directory: "rhythmfish",
     name: "Rhythm Fish",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "Fishing-based rhythm with gameplay synchronised to music. Catch fish, upgrade your gear and travel to new islands.",
     abouts: [
@@ -104,7 +104,7 @@ export const games: Game[] = [
   {
     directory: "airpusher",
     name: "Airpusher",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "First-person shooter/platformer with focused on agility and forward momentum. Features intricately designed levels with multiple routes, collectible power-ups and enemy encounters.",
     abouts: [
@@ -118,7 +118,7 @@ export const games: Game[] = [
   {
     directory: "latetaxi",
     name: "Late Taxi",
-    tools: "C# (Unity), Blender, FMOD",
+    tools: ["C#", "Unity", "Blender", "FMOD"],
     description:
       "A top-down driving simulator with interactive dialogue choices. Take passengers from destination to destination and learn more about the driver in the process.",
     abouts: [

@@ -1,18 +1,29 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      screens: {
-        // sm: "640px",
-        // md: "768px",
-        // lg: "1024px",
-        // xl: "1280px",
-        // "2xl": "1536px",
-        "2xl": "1280px",
+      colors: {
+        brand: {
+          light: colors.violet[200],
+          DEFAULT: colors.violet[600],
+          dark: colors.zinc[500],
+        },
+        dark: {
+          text: colors.zinc[100],
+          secondary: colors.zinc[400],
+          highlight: colors.zinc[700],
+          panel: colors.zinc[800],
+          DEFAULT: colors.zinc[900],
+        },
+        link: colors.blue[600],
       },
     },
   },

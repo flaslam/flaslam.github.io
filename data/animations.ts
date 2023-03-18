@@ -1,17 +1,24 @@
 export const pageDefault = {
-  hidden: { opacity: 0, translateY: -75 },
+  hidden: {
+    opacity: 0,
+    // translateY: -75,
+    transition: { ease: "easeInOut", duration: 0.25 },
+  },
   show: {
     opacity: 1,
-    translateY: 0,
-    transition: { ease: "easeInOut", duration: 0.2 },
+    // translateY: 0,
+    transition: { ease: "easeInOut", duration: 0.25 },
   },
 };
 
 export const containerDefault = {
-  hidden: { opacity: 0, translateY: -75 },
+  hidden: {
+    opacity: 0,
+    // translateY: -75
+  },
   show: {
     opacity: 1,
-    translateY: 0,
+    // translateY: 0,
     transition: { ease: "easeInOut", duration: 0.5 },
   },
 };
@@ -21,7 +28,7 @@ export const staggerParent = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1875,
+      staggerChildren: 0.2,
     },
   },
 };

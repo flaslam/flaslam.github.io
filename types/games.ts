@@ -1,6 +1,6 @@
 export interface Game {
   name: string;
-  tools: string;
+  tools: string[];
   description: string;
   abouts?: string[];
   roles?: string[];

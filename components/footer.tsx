@@ -8,9 +8,9 @@ const Footer = () => {
         href="mailto:flaslam@gmail.com"
         target="_blank"
         rel="noreferrer"
-        className="hover:text-blue-800"
+        className="hover:text-link"
       >
-        <HiMail className="text-3xl" />
+        <HiMail className="text-2xl" />
       </a>
     </footer>
   );

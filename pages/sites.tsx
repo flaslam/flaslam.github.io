@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
 import { sites } from "../data/sites";
-import MainLayout from "../components/layouts/main";
+import MainLayout from "../layouts/main";
 import ProjectsLayout from "../components/projects-layout";
 import Back from "../components/back";
 
 const Projects: NextPage = () => {
   return (
     <MainLayout title="Sites">
-      <div>
-        <div className="container mx-auto mb-12 px-6 pb-8 sm:px-12">
-          <div className="mb-4">
+      <div className="mx-auto max-w-screen-lg">
+        <div className="container mx-auto px-8">
+          <div className="mb-6">
             <Back>Back to projects</Back>
           </div>
           <ProjectsLayout projects={sites} />

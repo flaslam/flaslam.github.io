@@ -1,13 +1,23 @@
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
+import { useRef, useState } from "react";
+import { useTheme } from "next-themes";
+import { AnimatePresence, motion } from "framer-motion";
+import useClickOutside from "../hooks/use-click-outside";
+import ThemeChanger from "./theme-changer";
+
+import {
+  HiMenu,
+  HiX,
+  HiMoon as MoonIcon,
+  HiSun as SunIcon,
+} from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 interface Link {
-  title?: string | JSX.Element;
+  title?: string | React.ReactNode;
   url: string;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   newWindow?: boolean;
 }
 
@@ -24,77 +34,94 @@ const links: Link[] = [
 ];
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const router = useRouter();
+  const { theme } = useTheme();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
-  const createLinks = () => {
-    return links.map((item, index) => (
-      <div key={index}>
-        <Link
-          href={item.url}
-          onClick={() => setMenuOpen(false)}
-          target={item.newWindow ? "_blank" : ""}
+  const navRef = useRef(null);
+  useClickOutside(navRef, () => setMobileMenuOpen(false));
+
+  const renderLinks = links.map((item, index) => {
+    const inactive =
+      item.url !== router.pathname &&
+      !item.icon &&
+      "text-zinc-500 dark:text-zinc-400 dark:hover:text-link";
+    return (
+      <Link
+        href={item.url}
+        onClick={() => setMobileMenuOpen(false)}
+        target={item.newWindow ? "_blank" : ""}
+        key={index}
+      >
+        <div
+          className={`rounded-md p-1 px-2 transition hover:text-link ${inactive}`}
         >
-          <div>
-            <div className="rounded-md p-1 px-2 transition hover:text-blue-700">
-              <span className="font-bold">{item.title}</span>
-              {item.icon ? item.icon : null}
-            </div>
-          </div>
-        </Link>
-      </div>
-    ));
-  };
+          <span className="font-bold">{item.title}</span>
+          {item.icon ? item.icon : null}
+        </div>
+      </Link>
+    );
+  });
 
   return (
-    <nav className="sticky top-0 z-50 mb-2 rounded bg-white bg-opacity-80 py-0.5 backdrop-blur-md md:relative md:drop-shadow-none">
-      <div
-        className={`${
-          menuOpen ? "mb-4" : "mb-5"
-        } container z-50 mx-auto mt-5 flex items-center gap-2 px-12 sm:my-8 sm:px-12 md:px-24`}
-      >
-        <div className="grow text-lg font-bold">
-          <div>
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              <div>Fahd Aslam</div>
-            </Link>
-          </div>
+    <nav
+      className="sticky top-0 z-50 bg-zinc-200 bg-opacity-70 py-4 backdrop-blur-md dark:bg-dark-panel dark:bg-opacity-80"
+      ref={navRef}
+    >
+      <div className="mx-auto max-w-screen-lg">
+        <div className="container mx-auto px-8">
+          <div className="flex items-center gap-2">
+            <div className="flex grow flex-row gap-2 font-bold sm:flex-col md:flex-row md:gap-2">
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <div>Fahd Aslam</div>
+              </Link>
 
-          <div>
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              <div>
-                <span className="text-gray-500">Software Developer</span>
-              </div>
-            </Link>
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                <div className="lowercase text-zinc-500 dark:text-zinc-500">
+                  Software Developer
+                </div>
+              </Link>
+            </div>
+
+            {/* Links */}
+            <div className="ml-3 hidden flex-col items-center text-sm sm:flex sm:flex-row">
+              {renderLinks}
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              className="transition hover:cursor-pointer hover:opacity-50 sm:hidden"
+              onClick={() => setMobileMenuOpen((prevState) => !prevState)}
+            >
+              {!mobileMenuOpen ? (
+                <HiMenu className="text-xl" />
+              ) : (
+                <HiX className="text-xl" />
+              )}
+            </button>
+
+            <ThemeChanger>
+              {theme === "dark" ? (
+                <SunIcon className="text-orange-300" />
+              ) : (
+                <MoonIcon className="text-violet-500" />
+              )}
+            </ThemeChanger>
           </div>
         </div>
-
-        {/* Links */}
-        <div className="ml-3 hidden flex-col items-center sm:flex sm:flex-row">
-          {createLinks()}
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          className="transition hover:cursor-pointer hover:opacity-50 sm:hidden"
-          onClick={() => setMenuOpen((prevState) => !prevState)}
-        >
-          {!menuOpen ? (
-            <HiMenu className="text-xl" />
-          ) : (
-            <HiX className="text-xl" />
-          )}
-        </button>
       </div>
+
+      {/* Mobile menu */}
       <AnimatePresence>
-        {!menuOpen ? null : (
+        {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden"
+            className="overflow-hidden sm:hidden"
           >
-            <div className="mx-10 pb-8 sm:hidden">{createLinks()}</div>
+            <div className="mx-6 mt-2 flex flex-col gap-1">{renderLinks}</div>
           </motion.div>
         )}
       </AnimatePresence>

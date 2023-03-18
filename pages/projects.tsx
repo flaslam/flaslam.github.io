@@ -1,18 +1,21 @@
 import type { NextPage } from "next";
 import { projects } from "../data/projects";
-import MainLayout from "../components/layouts/main";
+import Layout from "../layouts/main";
 import ProjectsLayout from "../components/projects-layout";
+import { NextPageWithLayout } from "./_app";
 
-const Projects: NextPage = () => {
+const Projects: NextPageWithLayout = () => {
   return (
-    <MainLayout title="Projects">
-      <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto mb-12 px-6 pb-8 sm:px-12">
-          <ProjectsLayout projects={projects} />
-        </div>
+    <div className="mx-auto max-w-screen-lg">
+      <div className="container mx-auto px-8">
+        <ProjectsLayout projects={projects} />
       </div>
-    </MainLayout>
+    </div>
   );
 };
+
+Projects.getLayout = (page: React.ReactElement) => (
+  <Layout title="Projects">{page}</Layout>
+);
 
 export default Projects;

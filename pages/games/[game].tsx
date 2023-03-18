@@ -1,77 +1,64 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import MainLayout from "../../layouts/main";
 import { Game } from "../../types/games";
 import { games } from "../../data/games";
 import { paths } from "../../data/paths";
 import Image from "next/legacy/image";
 import Back from "../../components/back";
+import GameVideo from "../../components/game-video";
 import { NextPage } from "next";
-import MainLayout from "../../components/layouts/main";
 import { PuffLoader } from "react-spinners";
 
 interface GameProps {
-  game: string;
+  game: Game;
 }
 
-const Game: NextPage<GameProps> = (props) => {
-  const [project, setProject] = useState<Game | null>(null);
-
-  // On component mount
-  useEffect(() => {
-    // Find which project we are on
-    const findProject = () => {
-      for (const item of games) {
-        if (item.directory === props.game) {
-          setProject(item);
-          return;
-        }
-      }
-    };
-
-    findProject();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+const Game: NextPage<GameProps> = ({ game }) => {
   return (
-    <MainLayout title={project ? project.name : null}>
-      <div>
-        {/* Loading until page displays */}
-        {!project ? (
-          <div className="container mx-auto flex flex-col items-center">
-            <PuffLoader />
-          </div>
-        ) : (
-          <div>
-            {/* Background image */}
-            <div
-              className="bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${paths.IMG_DIR}${project.directory}/bg.jpg)`,
-              }}
-            >
-              {/* White background overlay */}
-              <div className="bg-white bg-opacity-80 py-12 px-6 md:px-12">
-                {/* Main content */}
-                <div className="container mx-auto max-w-screen-lg">
+    <MainLayout title={game.name} noSpace>
+      {/* Loading until page displays */}
+      {!game ? (
+        <div className="container mx-auto flex items-center">
+          <PuffLoader />
+        </div>
+      ) : (
+        <div className="">
+          {/* Background image */}
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${paths.IMG_DIR}/${game.directory}/bg.jpg)`,
+            }}
+          >
+            {/* Background overlay */}
+            <div className="bg-white bg-opacity-60 py-12 px-8 dark:bg-dark dark:bg-opacity-80">
+              {/* Main content */}
+              <div className="container mx-auto">
+                <div className="mx-auto max-w-screen-lg px-8">
                   <div className="mb-4 lg:mb-0">
                     <Back>Back to games</Back>
                   </div>
-                  <div className="flex flex-col gap-6 md:flex-row md:gap-4">
+
+                  <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+                    {/* Left side content */}
                     <div className="flex items-center md:basis-1/2">
-                      {/* Left side content */}
                       <div className="flex flex-col gap-4">
-                        <h1 className="text-3xl font-medium">{project.name}</h1>
-                        <p>{project.description}</p>
+                        <h1 className="text-3xl font-bold">{game.name}</h1>
+                        <p>{game.description}</p>
                         <div>
-                          <span className="font-medium">Tools — </span>{" "}
-                          {project.tools}
+                          <div className="font-bold">Built with</div>
+                          {/* <span className="font-bold">Tools — </span>{" "} */}
+                          {game.tools.join(", ")}
                         </div>
-                        {!project.abouts ? null : (
+                        {!game.abouts ? null : (
                           <div>
-                            <h3 className="text-xl font-medium">About</h3>
+                            <h3 className="mb-1 font-bold">About</h3>
                             <ul>
-                              {project.abouts.map((item, index) => (
-                                <li key={index} className="ml-4 list-disc">
+                              {game.abouts.map((item, index) => (
+                                <li
+                                  key={index}
+                                  className="ml-4 mb-1 list-disc text-sm"
+                                >
                                   {item}
                                 </li>
                               ))}
@@ -80,15 +67,18 @@ const Game: NextPage<GameProps> = (props) => {
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center justify-center px-2 md:basis-1/2">
-                      <div className="w-full md:p-6">
+
+                    {/* Image */}
+                    <div className="flex items-center justify-center md:basis-1/2">
+                      <div className="w-full">
                         <Image
-                          src={`${paths.IMG_DIR}${project.directory}/title.jpg`}
-                          alt={project.name}
+                          src={`${paths.IMG_DIR}/${game.directory}/title.jpg`}
+                          alt={game.name}
                           width="200"
                           height="200"
                           objectFit="cover"
                           layout="responsive"
+                          className="rounded-md"
                         />
                       </div>
                     </div>
@@ -96,51 +86,40 @@ const Game: NextPage<GameProps> = (props) => {
                 </div>
               </div>
             </div>
-
-            <div className="container mx-auto my-12 flex max-w-screen-lg flex-col gap-12 px-4">
-              {!project.videos
-                ? null
-                : [...Array(project.videos)].map((item, index) => {
-                    return (
-                      <div key={index}>
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          style={{ clipPath: "inset(1px 1px)" }}
-                          playsInline
-                        >
-                          <source
-                            src={`${paths.IMG_DIR}${project.directory}/${index}.mp4`}
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    );
-                  })}
-
-              {!project.screenshots
-                ? null
-                : [...Array(project.screenshots)].map((item, index) => {
-                    return (
-                      <div key={index}>
-                        <Image
-                          src={`${paths.IMG_DIR}${project.directory}/${index}.jpg`}
-                          alt={index.toString()}
-                          width="16"
-                          height="9"
-                          objectFit="cover"
-                          layout="responsive"
-                        />
-                      </div>
-                    );
-                  })}
-
-              <Back>Back to games</Back>
-            </div>
           </div>
-        )}
-      </div>
+
+          {/* Media videos and images */}
+          <div className="container mx-auto my-12 flex max-w-screen-lg flex-col gap-12 px-8">
+            {game.videos &&
+              game.videos > 0 &&
+              Array.from({ length: game.videos }, (_, index) => (
+                <React.Fragment key={index}>
+                  <GameVideo
+                    url={`${paths.IMG_DIR}/${game.directory}/${index}.mp4`}
+                  />
+                </React.Fragment>
+              ))}
+
+            {game.screenshots &&
+              game.screenshots > 0 &&
+              Array.from({ length: game.screenshots }).map((item, index) => (
+                <div key={index}>
+                  <Image
+                    src={`${paths.IMG_DIR}/${game.directory}/${index}.jpg`}
+                    alt={index.toString()}
+                    width="16"
+                    height="9"
+                    objectFit="cover"
+                    layout="responsive"
+                    className="rounded"
+                  />
+                </div>
+              ))}
+
+            <Back>Back to games</Back>
+          </div>
+        </div>
+      )}
     </MainLayout>
   );
 };
@@ -157,8 +136,9 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: any) => {
+  const game = games.find((game) => game.directory === context.params.game);
   return {
-    props: context.params,
+    props: { game },
   };
 };
 

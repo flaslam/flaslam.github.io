@@ -7,41 +7,38 @@ interface CardProps {
   game: Game;
 }
 
-const GamePanel: React.FC<CardProps> = ({ game: project }) => {
+const GamePanel: React.FC<CardProps> = ({ game }) => {
   return (
-    <Link href={`${paths.LINK_DIR}${project.directory}`} target="_self">
-      <div className="h-full w-full cursor-default">
+    <Link href={`${paths.LINK_DIR}/${game.directory}`} target="_self">
+      <div className="h-full w-full overflow-hidden rounded-md">
         <div
-          className="relative rounded-r-xl rounded-b-xl bg-cover bg-center transition hover:-translate-y-1"
+          className="relative bg-cover bg-center transition"
           style={{
-            backgroundImage: `url(${paths.IMG_DIR}${project.directory}/bg.jpg)`,
+            backgroundImage: `url(${paths.IMG_DIR}/${game.directory}/bg.jpg)`,
           }}
         >
-          <div className="overflow-hidden">
-            <div className="flex gap-8 rounded-r-xl rounded-b-xl bg-black bg-opacity-40 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-16 md:px-20">
-              <div className="flex flex-col justify-center gap-4 text-white md:basis-3/5">
-                <h1 className="text-2xl font-medium">
-                  <span className="cursor-pointer hover:text-blue-400">
-                    {project.name}
-                  </span>
-                </h1>
-                <p className="text-lg">{project.description}</p>
-                <div className="text-lg">
-                  <span className="font-medium">Tools — </span> {project.tools}
-                </div>
+          <div className="flex gap-8 bg-black bg-opacity-50 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-16 md:px-20">
+            <div className="flex flex-col justify-center gap-4 text-white md:basis-3/5">
+              <h1 className="text-2xl font-bold">
+                <span className="hover:text-link">{game.name}</span>
+              </h1>
+              <p className="text-lg">{game.description}</p>
+              <div className="text-lg">
+                <span className="font-bold">Tools — </span>{" "}
+                {game.tools.join(", ")}
               </div>
-              <div className="items-right hidden grow basis-1/3 items-center justify-end md:flex">
-                <div className="w-full overflow-hidden rounded-lg">
-                  <Image
-                    src={`${paths.IMG_DIR}${project.directory}/title.jpg`}
-                    alt={project.name}
-                    width="200"
-                    height="200"
-                    objectFit="cover"
-                    layout="responsive"
-                    className="cursor-pointer transition hover:scale-105 hover:opacity-80"
-                  />
-                </div>
+            </div>
+            <div className="items-right hidden grow basis-1/3 items-center justify-end md:flex">
+              <div className="w-full overflow-hidden rounded-lg">
+                <Image
+                  src={`${paths.IMG_DIR}/${game.directory}/title.jpg`}
+                  alt={game.name}
+                  width="200"
+                  height="200"
+                  objectFit="cover"
+                  layout="responsive"
+                  className="transition hover:scale-105 hover:opacity-80"
+                />
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ class MyDocument extends Document {
               }); `}
           </Script>
         </Head>
-        <body>
+        <body className="dark:bg-dark">
           <Main />
           <NextScript />
         </body>

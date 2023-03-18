@@ -4,14 +4,14 @@ export const projects: Project[] = [
   {
     name: "Chirp",
     description:
-      "Full-stack social media app inspired by Twitter, with a React/Next.js front-end and a Node.js/Express back-end.",
+      "Full-stack social media app inspired by Twitter with a fully responsive mobile-first front-end design and back-end REST API with auth.",
     technologies: [
       "React (Next.js)",
       "Node.js (Express)",
       "MongoDB",
       "TypeScript (JavaScript)",
       "Tailwind CSS",
-      "AWS S3",
+      "Amazon S3 (AWS)",
     ],
     link: "https://chirp-flaslam.vercel.app/",
     source: "https://github.com/flaslam/chirp",
@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     name: "Twitter Mood Board",
     description:
-      "Flask app that uses the Twitter API to pull data from a specified user's liked tweets and generates a mood board using the images.",
+      "Flask web app which generates a mood board using the Twitter API by pulling user data.",
     technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
     link: "https://twitter-board.onrender.com/",
     source: "https://github.com/flaslam/twitter-board",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     name: "Spotify 3D Visualiser",
     description:
-      "Visualisation app which authenticates users through Spotify and uses the Spotify API to fetch user data, allowing the user to visualise their recent listening history in a 3D space.",
+      "3D data visualisation app which authenticates users using the Spotify API and displays their listening habits in a 3D space.",
     link: "https://flaslam.github.io/spotify-visualiser/",
     source: "https://github.com/flaslam/spotify-visualiser",
     technologies: ["Three.js", "React", "TypeScript (JavaScript)"],
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     name: "Front End Sites",
     description:
-      "Multiple front end sites built for businesses and non-profits using various tools and frameworks (recent works to be added)",
+      "Example front end sites built for businesses and non-profits using various frameworks",
     link: "/sites",
     internal: true,
     image: "/images/projects/frontend.jpg",
@@ -50,15 +50,15 @@ export const projects: Project[] = [
       "CSS/SASS/Tailwind CSS/Bootstrap",
     ],
   },
-  {
-    name: "Blog Client/CMS/API",
-    description:
-      "Full-stack blog with a backend Node.js REST API, frontend CMS built in React and frontend client built in Next.js",
-    link: "https://blog-client-flaslam.vercel.app/",
-    source: "https://github.com/flaslam/blog-api",
-    technologies: ["React", "Next.js", "JavaScript", "MongoDB"],
-    image: "/images/projects/blog.png",
-  },
+  // {
+  //   name: "Blog Client/CMS/API",
+  //   description:
+  //     "Full-stack blog with a backend Node.js REST API, front-end CMS and client built in React and Next.js",
+  //   link: "https://blog-client-flaslam.vercel.app/",
+  //   source: "https://github.com/flaslam/blog-api",
+  //   technologies: ["React", "Next.js", "JavaScript", "MongoDB"],
+  //   image: "/images/projects/blog.png",
+  // },
   // {
   //   name: "Pomodoro Timer",
   //   description:
