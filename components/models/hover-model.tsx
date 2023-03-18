@@ -18,22 +18,24 @@ const MeshTracked: React.FC<MeshTrackedProps> = ({
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
 
-  return (
-    <mesh
-      geometry={geometry}
-      material={material}
-      // material={material}
-      position={position}
-      rotation={rotation}
-      scale={scale}
-      // scale={hovered ? (scale ? [2, 0.2, 4] : 2) : scale ? scale : 1}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
-      onClick={(event) => click(!clicked)}
-    >
-      {/* <meshToonMaterial color={hovered ? "hotpink" : "indianred"} /> */}
-    </mesh>
-  );
+  return null;
+
+  // return (
+  //   <mesh
+  //     geometry={geometry}
+  //     material={material}
+  //     // material={material}
+  //     position={position}
+  //     rotation={rotation}
+  //     scale={scale}
+  //     // scale={hovered ? (scale ? [2, 0.2, 4] : 2) : scale ? scale : 1}
+  //     onPointerOver={(event) => hover(true)}
+  //     onPointerOut={(event) => hover(false)}
+  //     onClick={(event) => click(!clicked)}
+  //   >
+  //     {/* <meshToonMaterial color={hovered ? "hotpink" : "indianred"} /> */}
+  //   </mesh>
+  // );
 };
 
 export default MeshTracked;
