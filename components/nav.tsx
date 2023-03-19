@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "framer-motion";
 import useClickOutside from "../hooks/use-click-outside";
@@ -28,7 +28,7 @@ const links: Link[] = [
   { title: "About", url: "/about" },
   {
     url: "https://github.com/flaslam",
-    icon: <AiFillGithub />,
+    icon: <AiFillGithub className="my-0.5 text-xl" />,
     newWindow: true,
   },
 ];
@@ -37,6 +37,10 @@ const Nav = () => {
   const router = useRouter();
   const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log("remounted nav");
+  }, []);
 
   const navRef = useRef(null);
   useClickOutside(navRef, () => setMobileMenuOpen(false));
@@ -71,7 +75,11 @@ const Nav = () => {
             : "text-violet-400 hover:text-violet-500"
         }`}
       >
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        {theme === "dark" ? (
+          <SunIcon className="my-0.5 text-xl" />
+        ) : (
+          <MoonIcon className="my-0.5 text-xl" />
+        )}
       </div>
     </ThemeChanger>
   );
@@ -84,13 +92,13 @@ const Nav = () => {
       <div className="mx-auto max-w-screen-lg">
         <div className="container mx-auto px-8">
           <div className="flex items-center gap-2">
-            <div className="flex grow flex-row gap-2 font-bold sm:flex-col md:flex-row md:gap-2">
+            <div className="flex grow flex-col font-bold md:flex-row md:gap-2">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 <div>Fahd Aslam</div>
               </Link>
 
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                <div className="lowercase text-zinc-500 dark:text-zinc-500">
+                <div className="text-zinc-500 dark:text-zinc-500">
                   Software Developer
                 </div>
               </Link>
@@ -127,7 +135,7 @@ const Nav = () => {
             transition={{ duration: 0.2 }}
             className="overflow-hidden sm:hidden"
           >
-            <div className="mx-6 mt-2 flex flex-col gap-1">
+            <div className="mx-7 mt-2 flex flex-col gap-1">
               {renderLinks}
               {themeButton}
             </div>
