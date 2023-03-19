@@ -2,16 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { pageDefault } from "../data/animations";
 
-interface Props {
+interface LayoutProps {
   children: React.ReactNode;
   title?: string;
   noSpace?: boolean;
 }
 
-const MainLayout: NextPage<Props> = ({ children, title, noSpace }) => {
+const MainLayout: NextPage<LayoutProps> = ({ children, title, noSpace }) => {
   const pageTitle = title ? `${title} — Fahd Aslam` : "Fahd Aslam";
 
   return (
@@ -23,6 +23,7 @@ const MainLayout: NextPage<Props> = ({ children, title, noSpace }) => {
       </Head>
       <div className="flex min-h-screen flex-col">
         <Nav />
+
         <motion.main
           variants={pageDefault}
           initial="hidden"
@@ -32,6 +33,7 @@ const MainLayout: NextPage<Props> = ({ children, title, noSpace }) => {
         >
           {children}
         </motion.main>
+
         <Footer />
       </div>
     </>

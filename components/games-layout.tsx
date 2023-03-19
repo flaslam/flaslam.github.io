@@ -10,7 +10,7 @@ interface GamesProps {
 const GamesLayout: React.FC<GamesProps> = ({ games }) => {
   return (
     <motion.div
-      className="flex flex-col gap-12"
+      className="flex flex-col gap-10"
       variants={staggerParent}
       initial="hidden"
       whileInView="show"

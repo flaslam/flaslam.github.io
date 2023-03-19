@@ -47,21 +47,34 @@ const Nav = () => {
       !item.icon &&
       "text-zinc-500 dark:text-zinc-400 dark:hover:text-link";
     return (
-      <Link
-        href={item.url}
-        onClick={() => setMobileMenuOpen(false)}
-        target={item.newWindow ? "_blank" : ""}
-        key={index}
-      >
-        <div
-          className={`rounded-md p-1 px-2 transition hover:text-link ${inactive}`}
+      <div key={index}>
+        <Link
+          href={item.url}
+          onClick={() => setMobileMenuOpen(false)}
+          target={item.newWindow ? "_blank" : ""}
         >
-          <span className="font-bold">{item.title}</span>
-          {item.icon ? item.icon : null}
-        </div>
-      </Link>
+          <div className={`p-1 px-1 transition hover:text-link ${inactive}`}>
+            <span className="font-bold">{item.title}</span>
+            {item.icon ? item.icon : null}
+          </div>
+        </Link>
+      </div>
     );
   });
+
+  const themeButton = (
+    <ThemeChanger>
+      <div
+        className={`p-1 ${
+          theme === "dark"
+            ? "text-orange-300 hover:text-orange-400"
+            : "text-violet-400 hover:text-violet-500"
+        }`}
+      >
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      </div>
+    </ThemeChanger>
+  );
 
   return (
     <nav
@@ -84,8 +97,9 @@ const Nav = () => {
             </div>
 
             {/* Links */}
-            <div className="ml-3 hidden flex-col items-center text-sm sm:flex sm:flex-row">
+            <div className="hidden items-center gap-2 text-sm sm:flex sm:flex-row">
               {renderLinks}
+              {themeButton}
             </div>
 
             {/* Mobile menu button */}
@@ -99,14 +113,6 @@ const Nav = () => {
                 <HiX className="text-xl" />
               )}
             </button>
-
-            <ThemeChanger>
-              {theme === "dark" ? (
-                <SunIcon className="text-orange-300" />
-              ) : (
-                <MoonIcon className="text-violet-500" />
-              )}
-            </ThemeChanger>
           </div>
         </div>
       </div>
@@ -121,7 +127,10 @@ const Nav = () => {
             transition={{ duration: 0.2 }}
             className="overflow-hidden sm:hidden"
           >
-            <div className="mx-6 mt-2 flex flex-col gap-1">{renderLinks}</div>
+            <div className="mx-6 mt-2 flex flex-col gap-1">
+              {renderLinks}
+              {themeButton}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

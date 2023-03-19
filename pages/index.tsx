@@ -19,7 +19,7 @@ const Home: NextPageWithLayout = () => {
           <ProjectsLayout projects={recentProjects} />
         </ProjectPreview>
 
-        <ProjectPreview url="/game" title="game">
+        <ProjectPreview url="/games" title="game">
           <GamesLayout games={recentGames} />
         </ProjectPreview>
       </div>

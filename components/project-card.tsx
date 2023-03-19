@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           target={target}
           title={`Go to project page for ${project.name}`}
         >
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded-md">
             <Image
               src={project.image}
               alt={project.name}

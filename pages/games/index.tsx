@@ -7,7 +7,7 @@ const Games: NextPage = () => {
   return (
     <MainLayout title="Games">
       <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-8">
           <GamesLayout games={games} />
         </div>
       </div>
