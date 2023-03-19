@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "framer-motion";
 import useClickOutside from "../hooks/use-click-outside";
@@ -37,10 +37,6 @@ const Nav = () => {
   const router = useRouter();
   const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log("remounted nav");
-  }, []);
 
   const navRef = useRef(null);
   useClickOutside(navRef, () => setMobileMenuOpen(false));
