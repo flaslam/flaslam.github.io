@@ -8,7 +8,7 @@ const Visual = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="h-96 w-full dark:bg-dark">
+    <div className="h-60 w-full dark:bg-dark md:h-96">
       <Canvas>
         <OrbitControls
           target={[0, 2.5, 0]}
