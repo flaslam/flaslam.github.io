@@ -16,7 +16,11 @@ const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ projects }) => {
       whileInView="show"
     >
       {projects.map((project, index) => (
-        <motion.div variants={staggerChild} key={index}>
+        <motion.div
+          key={index}
+          variants={staggerChild}
+          viewport={{ once: true }}
+        >
           <ProjectCard project={project} />
         </motion.div>
       ))}

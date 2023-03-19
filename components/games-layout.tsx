@@ -16,7 +16,11 @@ const GamesLayout: React.FC<GamesProps> = ({ games }) => {
       whileInView="show"
     >
       {games.map((game, index) => (
-        <motion.div variants={staggerChild} key={index}>
+        <motion.div
+          key={index}
+          variants={staggerChild}
+          viewport={{ once: true }}
+        >
           <GamePanel game={game} />
         </motion.div>
       ))}
