@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { pageDefault } from "../data/animations";
 
 interface LayoutProps {
@@ -11,7 +11,7 @@ interface LayoutProps {
   noSpace?: boolean;
 }
 
-const MainLayout: NextPage<LayoutProps> = ({ children, title, noSpace }) => {
+const Layout: NextPage<LayoutProps> = ({ children, title, noSpace }) => {
   const pageTitle = title ? `${title} — Fahd Aslam` : "Fahd Aslam";
 
   return (
@@ -40,4 +40,4 @@ const MainLayout: NextPage<LayoutProps> = ({ children, title, noSpace }) => {
   );
 };
 
-export default MainLayout;
+export default Layout;

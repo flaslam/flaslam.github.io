@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { useTheme } from "next-themes";
 import useIsMounted from "../hooks/use-is-mounted";
 

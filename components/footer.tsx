@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { HiMail } from "react-icons/hi";
 
 const Footer = () => {

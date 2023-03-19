@@ -1,7 +1,7 @@
-import { NextPage } from "next";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import Layout from "../layouts/model";
 import { NextPageWithLayout } from "./_app";
+import Layout from "../layouts/layout";
+import ModelLayout from "../layouts/model";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 const About: NextPageWithLayout = () => {
   const technologies = [
@@ -17,10 +17,6 @@ const About: NextPageWithLayout = () => {
     "MongoDB",
     "HTML & CSS",
   ];
-
-  const languages = ["C#", "JavaScript ES6", "TypeScript"];
-
-  const frameworks = ["React", "Next.js", "Node.js", "Express"];
 
   return (
     <div className="mx-auto max-w-screen-md">
@@ -57,7 +53,9 @@ const About: NextPageWithLayout = () => {
 };
 
 About.getLayout = (page: React.ReactElement) => (
-  <Layout title="About">{page}</Layout>
+  <Layout title="About" noSpace>
+    <ModelLayout>{page}</ModelLayout>
+  </Layout>
 );
 
 export default About;

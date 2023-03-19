@@ -1,11 +1,13 @@
-import { NextPage } from "next";
-import Layout from "../layouts/model";
+import { NextPageWithLayout } from "./_app";
+import Layout from "../layouts/layout";
+import ModelLayout from "../layouts/model";
+
+import SectionPreview from "../components/section-preview";
 import ProjectsLayout from "../components/projects-layout";
 import GamesLayout from "../components/games-layout";
-import ProjectPreview from "../components/project-preview";
+
 import { projects } from "../data/projects";
 import { games } from "../data/games";
-import { NextPageWithLayout } from "./_app";
 
 const limit = 2;
 const recentProjects = projects.slice(0, limit);
@@ -15,18 +17,22 @@ const Home: NextPageWithLayout = () => {
   return (
     <div className="mx-auto max-w-screen-lg">
       <div className="container mx-auto px-8">
-        <ProjectPreview url="/projects" title="web">
+        <SectionPreview url="/projects" title="web">
           <ProjectsLayout projects={recentProjects} />
-        </ProjectPreview>
+        </SectionPreview>
 
-        <ProjectPreview url="/games" title="game">
+        <SectionPreview url="/games" title="game">
           <GamesLayout games={recentGames} />
-        </ProjectPreview>
+        </SectionPreview>
       </div>
     </div>
   );
 };
 
-Home.getLayout = (page: React.ReactElement) => <Layout>{page}</Layout>;
+Home.getLayout = (page: React.ReactElement) => (
+  <Layout noSpace>
+    <ModelLayout>{page}</ModelLayout>
+  </Layout>
+);
 
 export default Home;

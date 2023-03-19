@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import { projects } from "../data/projects";
-import Layout from "../layouts/main";
+import Layout from "../layouts/layout";
 import ProjectsLayout from "../components/projects-layout";
-import { NextPageWithLayout } from "./_app";
 
 const Projects: NextPage = () => {
   return (
@@ -15,9 +14,5 @@ const Projects: NextPage = () => {
     </Layout>
   );
 };
-
-// Projects.getLayout = (page: React.ReactElement) => (
-//   <Layout title="Projects">{page}</Layout>
-// );
 
 export default Projects;
