@@ -14,6 +14,7 @@ const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ projects }) => {
       variants={staggerParent}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true }}
     >
       {projects.map((project, index) => (
         <motion.div

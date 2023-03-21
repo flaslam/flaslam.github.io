@@ -14,6 +14,7 @@ const GamesLayout: React.FC<GamesProps> = ({ games }) => {
       variants={staggerParent}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true }}
     >
       {games.map((game, index) => (
         <motion.div
