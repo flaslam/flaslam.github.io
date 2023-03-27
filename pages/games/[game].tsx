@@ -78,12 +78,10 @@ const Game: NextPage<GameProps> = ({ game }) => {
         </div>
       </div>
 
-      <Carousel>-</Carousel>
-
       {/* Media videos and images */}
       <div className="container mx-auto mt-8">
         <div className="mx-auto max-w-screen-lg px-8">
-          <Carousel>
+          <div className="flex flex-col gap-8">
             {game.videos &&
               game.videos > 0 &&
               Array.from({ length: game.videos }, (_, index) => (
@@ -93,10 +91,9 @@ const Game: NextPage<GameProps> = ({ game }) => {
                 />
               ))}
 
-            {game.screenshots &&
-              game.screenshots > 0 &&
-              Array.from({ length: game.screenshots }).map((item, index) => (
-                <div className="shrink-0 grow-0 basis-full" key={index}>
+            {game.screenshots && game.screenshots > 0 && (
+              <Carousel>
+                {Array.from({ length: game.screenshots }).map((item, index) => (
                   <Image
                     src={`${paths.IMG_DIR}/${game.directory}/${index}.jpg`}
                     alt={index.toString()}
@@ -104,15 +101,13 @@ const Game: NextPage<GameProps> = ({ game }) => {
                     height="9"
                     objectFit="cover"
                     layout="responsive"
-                    // className="-translate-x-1/2 rounded"
                     key={index}
                   />
-                </div>
-              ))}
-          </Carousel>
+                ))}
+              </Carousel>
+            )}
 
-          <div className="mt-4">
-            <Back>Back to games</Back>
+            <Back link="/games">Back to games</Back>
           </div>
         </div>
       </div>

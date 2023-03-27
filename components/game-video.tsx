@@ -16,7 +16,7 @@ const GameVideo: React.FC<GameVideoProps> = ({ url }) => {
       loop
       style={{ clipPath: "inset(1px 1px)" }}
       playsInline
-      className="scale-[1.0035]"
+      className="scale-[1.0035] rounded-lg"
     >
       <source src={url} type="video/mp4" />
     </video>
