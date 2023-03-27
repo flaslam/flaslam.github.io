@@ -26,7 +26,7 @@ module.exports = {
       },
       spacing: {
         container: "1.25rem",
-        top: "2.5rem",
+        top: "2rem",
       },
       screens: {
         sm: "640px",

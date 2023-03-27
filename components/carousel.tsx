@@ -38,27 +38,33 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative">
+    <div className="unselectable relative">
       <div ref={emblaRef} className="overflow-hidden rounded">
         <div className="flex [&>*]:shrink-0 [&>*]:grow-0 [&>*]:basis-full">
           {children}
         </div>
       </div>
 
-      <div className="absolute top-1/2 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl [&>*]:cursor-pointer [&>*]:rounded-full [&>*]:bg-black [&>*]:bg-opacity-50 [&>*]:p-2 [&>*]:transition hover:[&>*]:bg-opacity-80">
-        <div onClick={scrollPrev}>
+      <div className="absolute top-1/2 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl">
+        <div
+          onClick={scrollPrev}
+          className="cursor-pointer rounded-full bg-black bg-opacity-50 p-2 transition hover:bg-opacity-80"
+        >
           <LeftIcon />
         </div>
       </div>
 
-      <div className="absolute top-1/2 right-0 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl [&>*]:cursor-pointer [&>*]:rounded-full [&>*]:bg-black [&>*]:bg-opacity-50 [&>*]:p-2 [&>*]:transition hover:[&>*]:bg-opacity-80">
-        <div onClick={scrollNext}>
+      <div className="absolute top-1/2 right-0 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl">
+        <div
+          onClick={scrollNext}
+          className="cursor-pointer rounded-full bg-black bg-opacity-50 p-2 transition hover:bg-opacity-80"
+        >
           <RightIcon />
         </div>
       </div>
 
       {slides && slides > 0 && (
-        <div className="absolute bottom-0 z-10 mb-4 flex w-full justify-center gap-1">
+        <div className="absolute bottom-0 z-10 mb-2 flex w-full justify-center gap-1 sm:mb-4">
           {Array.from({ length: slides }, (_, index) => (
             <div
               key={index}
@@ -66,7 +72,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
               className="cursor-pointer px-2 py-2 [&>*]:hover:bg-opacity-80"
             >
               <div
-                className={`h-1.5 w-8 rounded-full bg-white transition sm:h-2 sm:w-10 ${
+                className={`h-1 w-8 rounded-full bg-white transition sm:h-1.5 sm:w-10 ${
                   selectedIndex == index ? "bg-opacity-100" : "bg-opacity-50"
                 }`}
               ></div>
