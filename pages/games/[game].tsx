@@ -7,6 +7,7 @@ import Image from "next/legacy/image";
 import Back from "../../components/back";
 import GameVideo from "../../components/game-video";
 import { NextPage } from "next";
+import Carousel from "../../components/carousel";
 
 interface GameProps {
   game: Game;
@@ -78,23 +79,21 @@ const Game: NextPage<GameProps> = ({ game }) => {
       </div>
 
       {/* Media videos and images */}
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-8">
         <div className="mx-auto max-w-screen-lg px-8">
-          <div className="my-12 flex flex-col gap-12">
+          <div className="flex flex-col gap-8">
             {game.videos &&
               game.videos > 0 &&
               Array.from({ length: game.videos }, (_, index) => (
-                <React.Fragment key={index}>
-                  <GameVideo
-                    url={`${paths.IMG_DIR}/${game.directory}/${index}.mp4`}
-                  />
-                </React.Fragment>
+                <GameVideo
+                  url={`${paths.IMG_DIR}/${game.directory}/${index}.mp4`}
+                  key={index}
+                />
               ))}
 
-            {game.screenshots &&
-              game.screenshots > 0 &&
-              Array.from({ length: game.screenshots }).map((item, index) => (
-                <div key={index}>
+            {game.screenshots && game.screenshots > 0 && (
+              <Carousel>
+                {Array.from({ length: game.screenshots }).map((item, index) => (
                   <Image
                     src={`${paths.IMG_DIR}/${game.directory}/${index}.jpg`}
                     alt={index.toString()}
@@ -102,12 +101,13 @@ const Game: NextPage<GameProps> = ({ game }) => {
                     height="9"
                     objectFit="cover"
                     layout="responsive"
-                    className="rounded"
+                    key={index}
                   />
-                </div>
-              ))}
+                ))}
+              </Carousel>
+            )}
 
-            <Back>Back to games</Back>
+            <Back link="/games">Back to games</Back>
           </div>
         </div>
       </div>
