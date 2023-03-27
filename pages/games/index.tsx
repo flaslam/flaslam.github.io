@@ -6,10 +6,8 @@ import { games } from "../../data/games";
 const Games: NextPage = () => {
   return (
     <Layout title="Games">
-      <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto px-8">
-          <GamesLayout games={games} />
-        </div>
+      <div className="container mx-auto px-container">
+        <GamesLayout games={games} />
       </div>
     </Layout>
   );

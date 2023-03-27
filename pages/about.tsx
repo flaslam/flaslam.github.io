@@ -20,7 +20,7 @@ const About: NextPageWithLayout = () => {
 
   return (
     <div className="mx-auto max-w-screen-md">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-container">
         <div className="mx-6">
           <div className="mx-auto flex flex-col gap-6 rounded-md bg-indigo-200 px-8 py-8 dark:bg-dark-panel">
             <p>Full stack web and indie game developer based in London, UK</p>

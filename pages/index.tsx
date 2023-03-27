@@ -15,16 +15,14 @@ const recentGames = games.slice(0, limit);
 
 const Home: NextPageWithLayout = () => {
   return (
-    <div className="mx-auto max-w-screen-lg">
-      <div className="container mx-auto px-8">
-        <SectionPreview url="/projects" title="web">
-          <ProjectsLayout projects={recentProjects} />
-        </SectionPreview>
+    <div className="container mx-auto px-container">
+      <SectionPreview url="/projects" title="web">
+        <ProjectsLayout projects={recentProjects} />
+      </SectionPreview>
 
-        <SectionPreview url="/games" title="game">
-          <GamesLayout games={recentGames} />
-        </SectionPreview>
-      </div>
+      <SectionPreview url="/games" title="game">
+        <GamesLayout games={recentGames} />
+      </SectionPreview>
     </div>
   );
 };

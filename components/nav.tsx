@@ -81,12 +81,9 @@ const Nav = () => {
   );
 
   return (
-    <nav
-      className="sticky top-0 z-50 bg-zinc-200 bg-opacity-70 py-4 backdrop-blur-md dark:bg-dark-panel dark:bg-opacity-80"
-      ref={navRef}
-    >
-      <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto px-8">
+    <nav className="sticky top-0 z-50" ref={navRef}>
+      <div className="bg-zinc-200 bg-opacity-70 backdrop-blur-md dark:bg-dark-panel dark:bg-opacity-80">
+        <div className="container mx-auto px-container py-4">
           <div className="flex items-center gap-2">
             <div className="flex grow flex-col font-bold md:flex-row md:gap-2">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
@@ -129,11 +126,13 @@ const Nav = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden sm:hidden"
+            className="absolute w-full overflow-hidden sm:hidden"
           >
-            <div className="mx-7 mt-2 flex flex-col gap-1">
-              {renderLinks}
-              {themeButton}
+            <div className="bg-zinc-200 bg-opacity-70 backdrop-blur-md dark:bg-dark-panel dark:bg-opacity-80">
+              <div className="flex flex-col gap-2 py-2 px-container">
+                {renderLinks}
+                {themeButton}
+              </div>
             </div>
           </motion.div>
         )}

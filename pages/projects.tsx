@@ -6,10 +6,8 @@ import ProjectsLayout from "../components/projects-layout";
 const Projects: NextPage = () => {
   return (
     <Layout title="Projects">
-      <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto px-8">
-          <ProjectsLayout projects={projects} />
-        </div>
+      <div className="container mx-auto px-container">
+        <ProjectsLayout projects={projects} />
       </div>
     </Layout>
   );

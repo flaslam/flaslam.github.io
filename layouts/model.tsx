@@ -14,7 +14,7 @@ const ModelLayout: NextPageWithLayout<ModelLayoutProps> = ({
   return (
     <>
       <Visual />
-      <div className={`${noSpace ? "" : "mt-8"}`}>{children}</div>
+      <div className={`${noSpace ? "" : "mt-top"}`}>{children}</div>
     </>
   );
 };

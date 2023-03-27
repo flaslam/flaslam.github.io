@@ -29,7 +29,7 @@ const Layout: NextPage<LayoutProps> = ({ children, title, noSpace }) => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className={`${noSpace ? "" : "mt-12"} flex-1`}
+          className={`${noSpace ? "" : "mt-top"} flex-1`}
         >
           {children}
         </motion.main>

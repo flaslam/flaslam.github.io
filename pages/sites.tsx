@@ -7,13 +7,11 @@ import Back from "../components/back";
 const Projects: NextPage = () => {
   return (
     <Layout title="Sites">
-      <div className="mx-auto max-w-screen-lg">
-        <div className="container mx-auto px-8">
-          <div className="mb-6">
-            <Back>Back to projects</Back>
-          </div>
-          <ProjectsLayout projects={sites} />
+      <div className="container mx-auto px-container">
+        <div className="mb-6">
+          <Back>Back to projects</Back>
         </div>
+        <ProjectsLayout projects={sites} />
       </div>
     </Layout>
   );
