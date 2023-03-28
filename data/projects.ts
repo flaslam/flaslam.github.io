@@ -1,10 +1,10 @@
-import { Project } from "../types/projects";
+import Project from "../types/projects";
 
 export const projects: Project[] = [
   {
     name: "Chirp",
     description:
-      "Full-stack social media app inspired by Twitter with a fully responsive mobile-first front-end design and back-end REST API with auth.",
+      "Full-stack social media app inspired by Twitter with a fully responsive front-end and back-end REST API with auth",
     technologies: [
       "React (Next.js)",
       "Node.js (Express)",
@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     name: "Twitter Mood Board",
     description:
-      "Flask web app which generates a mood board using the Twitter API by pulling user data.",
+      "Flask web app which generates a mood board by pulling user data using the Twitter API",
     technologies: ["Python", "Flask", "JavaScript", "HTML/CSS"],
     link: "https://twitter-board.onrender.com/",
     source: "https://github.com/flaslam/twitter-board",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     name: "Spotify 3D Visualiser",
     description:
-      "3D data visualisation app which authenticates users using the Spotify API and displays their listening habits in a 3D space.",
+      "3D data visualisation app which authenticates users using the Spotify API and displays their listening habits in a 3D space",
     link: "https://flaslam.github.io/spotify-visualiser/",
     source: "https://github.com/flaslam/spotify-visualiser",
     technologies: ["Three.js", "React", "TypeScript (JavaScript)"],
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     name: "Front End Sites",
     description:
-      "Example front end sites built for businesses and non-profits using various frameworks",
+      "Examples of some front end sites built for businesses and non-profits using various frameworks",
     link: "/sites",
     internal: true,
     image: "/images/projects/frontend.jpg",

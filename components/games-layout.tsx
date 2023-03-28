@@ -1,5 +1,5 @@
 import GamePanel from "./game-panel";
-import { Game } from "../types/games";
+import Game from "../types/games";
 import { motion } from "framer-motion";
 import { staggerChild, staggerParent } from "../data/animations";
 

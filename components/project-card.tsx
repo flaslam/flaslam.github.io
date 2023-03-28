@@ -1,4 +1,4 @@
-import { Project } from "../types/projects";
+import Project from "../types/projects";
 import { AiFillGithub } from "react-icons/ai";
 import { MdOpenInBrowser } from "react-icons/md";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const target = project.internal ? "_self" : "_blank";
 
   return (
-    <div className="overflow-hidden rounded bg-violet-200 transition hover:bg-violet-100 dark:bg-dark-panel dark:hover:bg-dark-highlight">
+    <div className="overflow-hidden rounded bg-violet-200 p-5 transition hover:bg-violet-100 dark:bg-dark-panel dark:hover:bg-dark-highlight">
       <div className="flex flex-col">
         {/* Image */}
         <Link
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </Link>
 
-        <div className="flex flex-col gap-2 px-6 py-5">
+        <div className="flex flex-col gap-2 pt-3">
           {/* Top row */}
           <div className="flex items-baseline gap-1">
             {/* Title */}

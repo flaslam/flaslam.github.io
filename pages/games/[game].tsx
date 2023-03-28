@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../layouts/layout";
-import { Game } from "../../types/games";
+import Game from "../../types/games";
 import { games } from "../../data/games";
 import { paths } from "../../data/paths";
 import Image from "next/legacy/image";

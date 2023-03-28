@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
-import { Game } from "../types/games";
+import Game from "../types/games";
 import { paths } from "../data/paths";
 
 interface CardProps {
