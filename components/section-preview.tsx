@@ -31,7 +31,7 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
       {/* See more text */}
       <div className="mt-4 flex justify-end font-bold">
         <Link href={url}>
-          <span className="hover:text-link">See more</span>
+          <span className="hover:text-link">See more...</span>
         </Link>
       </div>
     </div>

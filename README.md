@@ -4,8 +4,8 @@ Deployed on [GitHub Pages](https://flaslam.github.io/).
 
 This site was built using the following technologies:
 
-- Next.js (React)
-- TypeScript (JavaScript ES6)
+- React (Next.js)
+- TypeScript / JavaScript ES6
 - Three.js
 - Tailwind CSS
 

@@ -17,48 +17,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const target = project.internal ? "_self" : "_blank";
 
   return (
-    <div className="rounded-md bg-violet-200 p-6 transition hover:bg-violet-100 dark:bg-dark-panel dark:hover:bg-dark-highlight">
-      <div className="flex flex-col gap-2">
-        {/* Top row */}
-        <div className="flex items-baseline gap-1">
-          {/* Title */}
-          <h1 className="grow truncate text-lg font-bold">
-            <Link href={href} target={target}>
-              <span className="hover:text-link">{project.name}</span>
-            </Link>
-          </h1>
-
-          {!project.source ? null : (
-            <Link
-              href={project.source}
-              target="_blank"
-              title={`Go to source code for ${project.name}`}
-            >
-              <div>
-                <AiFillGithub className="text-xl transition hover:text-gray-500" />
-              </div>
-            </Link>
-          )}
-
-          {/* Icons */}
-          <Link
-            href={project.link}
-            target={target}
-            title={`Go to deployed project for ${project.name}`}
-          >
-            <div>
-              <MdOpenInBrowser className="text-xl transition hover:text-gray-500" />
-            </div>
-          </Link>
-        </div>
-
+    <div className="overflow-hidden rounded bg-violet-200 transition hover:bg-violet-100 dark:bg-dark-panel dark:hover:bg-dark-highlight">
+      <div className="flex flex-col">
         {/* Image */}
         <Link
           href={href}
           target={target}
           title={`Go to project page for ${project.name}`}
         >
-          <div className="overflow-hidden rounded-md">
+          <div className="overflow-hidden rounded">
             <Image
               src={project.image}
               alt={project.name}
@@ -73,31 +40,66 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </Link>
 
-        <div>
-          {/* Description */}
-          {project.description && <p>{project.description}</p>}
+        <div className="flex flex-col gap-2 px-6 py-5">
+          {/* Top row */}
+          <div className="flex items-baseline gap-1">
+            {/* Title */}
+            <h1 className="grow truncate text-lg font-bold">
+              <Link href={href} target={target}>
+                <span className="hover:text-link">{project.name}</span>
+              </Link>
+            </h1>
 
-          {/* Technologies */}
-          {project.technologies && (
-            <p className="pt-1 text-sm text-brand-dark dark:text-dark-secondary">
-              {project.technologies.join(", ")}
-            </p>
+            {!project.source ? null : (
+              <Link
+                href={project.source}
+                target="_blank"
+                title={`Go to source code for ${project.name}`}
+              >
+                <div>
+                  <AiFillGithub className="text-xl transition hover:text-gray-500" />
+                </div>
+              </Link>
+            )}
+
+            {/* Icons */}
+            <Link
+              href={project.link}
+              target={target}
+              title={`Go to deployed project for ${project.name}`}
+            >
+              <div>
+                <MdOpenInBrowser className="text-xl transition hover:text-gray-500" />
+              </div>
+            </Link>
+          </div>
+
+          <div>
+            {/* Description */}
+            {project.description && <p>{project.description}</p>}
+
+            {/* Technologies */}
+            {project.technologies && (
+              <p className="pt-1 text-sm text-brand-dark dark:text-dark-secondary">
+                {project.technologies.join(", ")}
+              </p>
+            )}
+          </div>
+
+          {/* Features */}
+          {project.features && (
+            <div>
+              <h2 className="font-bold">Features:</h2>
+              <ul>
+                {project.features.map((item, index) => (
+                  <li className="ml-5 list-disc" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
-
-        {/* Features */}
-        {project.features && (
-          <div>
-            <h2 className="font-bold">Features:</h2>
-            <ul>
-              {project.features.map((item, index) => (
-                <li className="ml-5 list-disc" key={index}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
