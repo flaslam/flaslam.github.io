@@ -10,7 +10,7 @@ interface ProjectsLayoutProps {
 const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ projects }) => {
   return (
     <motion.div
-      className={`grid grid-cols-1 gap-8 sm:grid-cols-2`}
+      className={`grid grid-cols-1 gap-8 md:grid-cols-2`}
       variants={staggerParent}
       initial="hidden"
       whileInView="show"
