@@ -9,7 +9,11 @@ interface CardProps {
 
 const GamePanel: React.FC<CardProps> = ({ game }) => {
   return (
-    <Link href={`${paths.LINK_DIR}/${game.directory}`} target="_self">
+    <Link
+      href={`${paths.LINK_DIR}/${game.directory}`}
+      target="_self"
+      scroll={false}
+    >
       <div className="h-full w-full overflow-hidden rounded-md">
         <div
           className="relative bg-cover bg-center transition"
