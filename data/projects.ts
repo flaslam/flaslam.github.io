@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     name: "Chirp",
     description:
-      "Full-stack social media app inspired by Twitter with a fully responsive front-end and back-end REST API with auth",
+      "Full-stack social media app inspired by Twitter with a fully responsive front-end design and back-end REST API with auth and cloud file storage",
     technologies: [
       "React (Next.js)",
       "Node.js (Express)",

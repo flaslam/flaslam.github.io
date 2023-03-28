@@ -15,7 +15,7 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
   return (
     <div className="container mx-auto">
       {/* Section title */}
-      <div className="my-2 text-lg font-bold">
+      <div className="mb-3 text-lg font-bold">
         <div className="transition">
           <Link href={url}>
             <span className="hover:text-link">
@@ -29,7 +29,7 @@ const ProjectPreview: React.FC<ProjectPreviewProps> = ({
       {children}
 
       {/* See more text */}
-      <div className="mt-4 flex justify-end font-bold">
+      <div className="mt-3 flex justify-end font-bold">
         <Link href={url}>
           <span className="hover:text-link">See more...</span>
         </Link>
