@@ -45,7 +45,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         </div>
       </div>
 
-      <div className="absolute top-1/2 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl">
+      <div className="absolute top-1/2 z-10 ml-4 -translate-y-1/2 items-center justify-between text-white sm:text-xl">
         <div
           onClick={scrollPrev}
           className="cursor-pointer rounded-full bg-black bg-opacity-50 p-2 transition hover:bg-opacity-80"
@@ -54,7 +54,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         </div>
       </div>
 
-      <div className="absolute top-1/2 right-0 z-10 -translate-y-1/2 items-center justify-between px-4 text-black dark:text-white sm:text-xl">
+      <div className="absolute top-1/2 right-0 z-10 mr-4 -translate-y-1/2 items-center justify-between text-white sm:text-xl">
         <div
           onClick={scrollNext}
           className="cursor-pointer rounded-full bg-black bg-opacity-50 p-2 transition hover:bg-opacity-80"

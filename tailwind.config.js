@@ -12,12 +12,15 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          light: colors.violet[200],
-          DEFAULT: colors.violet[600],
-          dark: colors.zinc[500],
+          lighter: colors.indigo[100],
+          light: colors.indigo[200],
+          medium: colors.indigo[300],
+          DEFAULT: colors.indigo[600],
+          dark: colors.zinc[800],
         },
         dark: {
           secondary: colors.zinc[400],
+          medium: colors.zinc[600],
           highlight: colors.zinc[800],
           panel: colors.zinc[900],
           DEFAULT: colors.black,

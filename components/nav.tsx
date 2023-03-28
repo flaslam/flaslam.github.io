@@ -85,7 +85,7 @@ const Nav = () => {
       <div className="bg-zinc-200 bg-opacity-70 backdrop-blur-md dark:bg-dark-panel dark:bg-opacity-80">
         <div className="container mx-auto px-container py-4">
           <div className="flex items-center gap-2">
-            <div className="flex grow flex-col font-bold md:flex-row md:gap-2">
+            <div className="flex flex-col font-bold md:flex-row md:gap-2">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 <div>Fahd Aslam</div>
               </Link>
@@ -96,6 +96,8 @@ const Nav = () => {
                 </div>
               </Link>
             </div>
+
+            <div className="grow" />
 
             {/* Links */}
             <div className="hidden items-center gap-2 text-sm sm:flex sm:flex-row">
