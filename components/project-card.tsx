@@ -100,7 +100,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   key={index}
                   className="rounded-full bg-brand-lighter py-0.5 px-2.5 dark:bg-dark-highlight"
                 >
-                  <span className="text-sm text-brand-dark dark:text-dark-secondary">
+                  <span className="text-xs font-bold text-brand-dark dark:text-dark-secondary">
                     {item}
                   </span>
                 </div>

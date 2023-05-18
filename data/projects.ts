@@ -47,7 +47,10 @@ export const projects: Project[] = [
       "Next.js",
       "TypeScript",
       "JavaScript",
-      "CSS/SASS/Tailwind CSS/Bootstrap",
+      "Tailwind CSS",
+      "Bootstrap",
+      "HTML5",
+      "CSS3",
     ],
   },
   // {
