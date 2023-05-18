@@ -2,6 +2,7 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import Game from "../types/games";
 import { paths } from "../data/paths";
+import Tag from "./tag";
 
 interface CardProps {
   game: Game;
@@ -30,8 +31,13 @@ const GamePanel: React.FC<CardProps> = ({ game }) => {
                 </h1>
                 <p className="">{game.description}</p>
                 <div className="">
-                  <div className="font-bold">Built with</div>
-                  {game.tools.join(", ")}
+                  <div className="flex gap-2">
+                    {game.tools.map((tool, index) => (
+                      <Tag key={index} forceLight>
+                        {tool}
+                      </Tag>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

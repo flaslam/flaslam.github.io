@@ -8,6 +8,7 @@ import Back from "../../components/back";
 import GameVideo from "../../components/game-video";
 import { NextPage } from "next";
 import Carousel from "../../components/carousel";
+import Tag from "../../components/tag";
 
 interface GameProps {
   game: Game;
@@ -37,10 +38,15 @@ const Game: NextPage<GameProps> = ({ game }) => {
                 <div className="flex flex-col gap-4">
                   <h1 className="text-3xl font-bold">{game.name}</h1>
                   <p>{game.description}</p>
-                  <div>
+                  <div className="flex flex-col gap-1">
                     <div className="font-bold">Built with</div>
-                    {/* <span className="font-bold">Tools — </span>{" "} */}
-                    {game.tools.join(", ")}
+                    <div className="flex gap-2">
+                      {game.tools.map((tool, index) => (
+                        <Tag key={index} forceLight>
+                          {tool}
+                        </Tag>
+                      ))}
+                    </div>
                   </div>
                   {!game.abouts ? null : (
                     <div>
