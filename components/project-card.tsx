@@ -4,6 +4,7 @@ import { AiFillGithub as GithubIcon } from "react-icons/ai";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/legacy/image";
+import Tag from "./tag";
 
 interface ProjectCardProps {
   project: Project;
@@ -96,14 +97,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {/* Technologies */}
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-full bg-brand-lighter py-0.5 px-2.5 dark:bg-dark-highlight"
-                >
-                  <span className="text-xs font-bold text-brand-dark dark:text-dark-secondary">
-                    {item}
-                  </span>
-                </div>
+                <Tag key={index}>{item}</Tag>
               ))}
             </div>
           </div>
