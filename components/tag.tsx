@@ -6,7 +6,7 @@ interface TagProps {
 const Tag: React.FC<TagProps> = ({ children, forceLight }) => {
   return (
     <div
-      className={`rounded-full py-0.5 px-2.5 ${
+      className={`rounded-full bg-opacity-90 py-0.5 px-2.5 ${
         forceLight ? "bg-white" : "bg-brand-lighter dark:bg-dark-highlight"
       }`}
     >

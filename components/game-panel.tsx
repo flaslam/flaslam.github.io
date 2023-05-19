@@ -22,7 +22,7 @@ const GamePanel: React.FC<CardProps> = ({ game }) => {
             backgroundImage: `url(${paths.IMG_DIR}/${game.directory}/bg.jpg)`,
           }}
         >
-          <div className="flex gap-8 bg-black bg-opacity-50 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-8 md:px-12">
+          <div className="group flex gap-8 bg-black bg-opacity-50 p-10 transition hover:bg-opacity-60 sm:py-16 sm:px-20 md:py-8 md:px-12">
             {/* Left panel */}
             <div className="md:basis-3/4">
               <div className="flex h-full max-w-md flex-col justify-center gap-4 text-white">
@@ -52,7 +52,7 @@ const GamePanel: React.FC<CardProps> = ({ game }) => {
                   height="100"
                   objectFit="cover"
                   layout="responsive"
-                  className="transition hover:scale-105 hover:opacity-80"
+                  className="transition group-hover:scale-105 group-hover:opacity-80"
                 />
               </div>
             </div>
