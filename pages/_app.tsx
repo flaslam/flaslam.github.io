@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, router }: AppPropsWithLayout) {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">
-      <main className={inter.className}>
+      <main className={`${inter.className}`} style={{ height: "100vh" }}>
         <AnimatePresence
           exitBeforeEnter
           initial={true}

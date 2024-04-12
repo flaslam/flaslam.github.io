@@ -1,14 +1,19 @@
 import { Canvas } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { OrbitControls, OrthographicCamera } from "@react-three/drei";
+import { OrbitControls, OrthographicCamera, Stars } from "@react-three/drei";
 import { useTheme } from "next-themes";
 import Model from "./models/EvaEdit";
 
-const Visual = () => {
+const Visual: React.FC<{ fullHeight?: boolean }> = ({ fullHeight }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="h-60 w-full dark:bg-dark md:h-96">
+    <div
+      // className={`${
+      //   fullHeight ? "h-full" : "h-60 md:h-96"
+      // } w-full dark:bg-dark`}
+      className="h-full"
+    >
       <Canvas>
         <OrbitControls
           target={[0, 2.5, 0]}
@@ -44,6 +49,7 @@ const Visual = () => {
               luminanceSmoothing={0.0}
               intensity={1}
             />
+            <Stars speed={5} />
           </EffectComposer>
         )}
       </Canvas>
