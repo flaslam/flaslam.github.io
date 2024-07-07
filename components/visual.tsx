@@ -9,10 +9,10 @@ const Visual: React.FC<{ fullHeight?: boolean }> = ({ fullHeight }) => {
 
   return (
     <div
-      // className={`${
-      //   fullHeight ? "h-full" : "h-60 md:h-96"
-      // } w-full dark:bg-dark`}
-      className="h-full"
+      className={`${
+        fullHeight ? "h-full" : "h-60 md:h-96"
+      } w-full dark:bg-dark`}
+      // className="h-full"
     >
       <Canvas>
         <OrbitControls
